@@ -17,15 +17,15 @@ Implementation is authorized and local work is tracked below. Use local Kazakhst
 | T02 | Complete locally | P0 | Bootstrap core and lock dependencies / engineer | T01 local authorization | 30 min | Sat Nov 14 18:50 |
 | T03 | Complete locally | P0 | Pin sources and parser contracts / data owner | T01 local authorization | 30 min | Sat Nov 14 18:50 |
 | T04 | Complete locally | P0 | Implement raw tokenizer and output contracts / engineer | T02 | 90 min | Sat Nov 14 20:20 |
-| T05 | Awaiting bilingual labels | P0 | Freeze candidates and blind-review gold / bilingual lead | T03 and T04 for offsets. Draft text/policy can start during T03. | 195 min in three blocks | Sun Nov 15 12:05, texts frozen Sat 21:10 |
+| T05 | Complete | P0 | Freeze candidates and blind-review gold / bilingual lead | T03 and T04 for offsets. Draft text/policy can start during T03. | 195 min in three blocks | Sun Nov 15 12:05, texts frozen Sat 21:10 |
 | T06 | Complete locally | P0 | Ingest, group, deduplicate and split / data owner | T03, T04 and T05 text snapshot. Labels can continue. | 90 min | Sat Nov 14 23:10 |
 | T07 | Complete locally | P0 | Fit baseline/fallback and produce real CLI output / ML engineer | T06 | 105 min | Sun Nov 15 10:00 |
-| T08 | Fitted, informal dev pending | P1 | Fit context variant and compare on dev / ML engineer | T07 and T05 dev labels | 45 min | Sun Nov 15 12:05 |
-| T09 | Mono complete, KRCS pending | P0 | Lock and score held-out benchmarks / research lead | T05 gold for KRCS, T07, T08 complete or gated off | 90 min | Sun Nov 15 14:05 |
-| T10 | Mono complete, KRCS pending | P0 | Interpret failures and lock reporting / research lead | T09 | 60 min | Sun Nov 15 15:05 |
+| T08 | Complete, word-only selected | P1 | Fit context variant and compare on dev / ML engineer | T07 and T05 dev labels | 45 min | Sun Nov 15 12:05 |
+| T09 | Both locked runs complete | P0 | Lock and score held-out benchmarks / research lead | T05 gold for KRCS, T07, T08 complete or gated off | 90 min | Sun Nov 15 14:05 |
+| T10 | Complete | P0 | Interpret failures and lock reporting / research lead | T09 | 60 min | Sun Nov 15 15:05 |
 | T11 | Complete locally | P0 | Wire Gradio or working demo fallback / product engineer | T07 for adapters, T09 for release model ID | 120 min | Sun Nov 15 17:20 |
-| T12 | Local QA complete, user review pending | P0 | Clean checkout and user acceptance / QA owner | T10, T11 | 105 min | Sun Nov 15 19:05 |
-| T13 | Fallback published and verified | P0 | Write, credit, publish and link-check / entrant and writer | Draft with T10, final after T12 | 160 min in two blocks | Sun Nov 15 22:15 |
+| T12 | Tuned bundle verified, user review pending | P0 | Clean checkout and user acceptance / QA owner | T10, T11 | 105 min | Sun Nov 15 19:05 |
+| T13 | KRCS package ready | P0 | Write, credit, publish and link-check / entrant and writer | Draft with T10, final after T12 | 160 min in two blocks | Sun Nov 15 22:15 |
 | T14 | Ready for entrant | P0 | Submit and retain receipt / designated entrant | T13 | 35 min plus shared recovery buffer | Mon Nov 16 00:30 |
 | T15 | Queued | P1 | Record optional video and verify update / presenter | T14 | 75 min | Mon Nov 16 08:30 |
 | T16 | Queued | P2 | Defer stretch research until release permits / team | T14, separate scope and dataset | 2 h minimum per experiment | Defer beyond this event by default |

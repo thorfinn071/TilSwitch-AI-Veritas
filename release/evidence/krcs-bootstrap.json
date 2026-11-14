@@ -1,0 +1,25 @@
+{
+  "base_macro_f1_delta_intervals": {
+    "context_minus_heuristic": [
+      0.249153411307968,
+      0.4325079834285202
+    ],
+    "context_minus_word": [
+      -0.04078786589028292,
+      0.031050065690971122
+    ],
+    "word_minus_heuristic": [
+      0.25409223989278096,
+      0.4337281437854637
+    ]
+  },
+  "independent_message_groups": 36,
+  "interval_quantiles": [
+    0.025,
+    0.975
+  ],
+  "lock_sha256": "1455d555c2e552c9fd973838370b5912b44c0b565c8081b02024cfc636e50f5e",
+  "replicates": 2000,
+  "seed": 3701,
+  "valid_replicates": 2000
+}

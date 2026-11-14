@@ -1,6 +1,6 @@
 # TilSwitch AI hackathon submission plan
 
-The submission write-up is the GitHub README, with results and source credits. The confirmed contributor is Nurmukhamed Sabit. The word-only release and write-up were verified signed out on Nov 14. [Public code](https://github.com/thorfinn071/TilSwitch-AI-Veritas) · [Pinned write-up](https://github.com/thorfinn071/TilSwitch-AI-Veritas/blob/e725a7e721c4ea156096f0693e94f7fd51c850f6/README.md) · [Results](RESULTS.md) · [Credits](DATA_AND_MODELS.md)
+The current submission write-up is the GitHub README with the locked KRCS results. Nurmukhamed Sabit is the solo entrant. The initial Nov 14 package remains available at its original commit. [Public code](https://github.com/thorfinn071/TilSwitch-AI-Veritas) · [Current write-up](../README.md) · [Results](RESULTS.md) · [Credits](DATA_AND_MODELS.md) · [Initial write-up](https://github.com/thorfinn071/TilSwitch-AI-Veritas/blob/e725a7e721c4ea156096f0693e94f7fd51c850f6/README.md)
 
 ## Official requirements and source precedence
 

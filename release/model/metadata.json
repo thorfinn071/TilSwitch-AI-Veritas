@@ -15,7 +15,7 @@
     "platform": "Windows-10-10.0.26300-SP0",
     "python": "3.11.9"
   },
-  "evaluation_lock_sha256": "8d325a2e42e39be3a2b3986bf3b70c6faf8b3549e872bbc248c654784cc8a6a2",
+  "evaluation_lock_sha256": "1455d555c2e552c9fd973838370b5912b44c0b565c8081b02024cfc636e50f5e",
   "features": 24274,
   "fit_seconds": 2.465,
   "iterations": 32,

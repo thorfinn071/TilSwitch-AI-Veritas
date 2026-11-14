@@ -26,23 +26,26 @@ The Veritas language identification starter assigns one label per sentence. We b
 
 ## How it works
 
-Logistic regression learns character patterns from 6,000 Tatoeba training sentences. The context variant also sees the closest word on either side. Both use the same input checks as the baseline, which uses script and distinctive Kazakh letters.
+Logistic regression learns character patterns from 6,000 Tatoeba training sentences. The context variant also sees the closest word on either side. The baseline uses script and distinctive Kazakh letters. I labeled 12 KRCS development messages to choose when to mark a word uncertain and 36 separate messages for testing.
 
 ## Results
 
-On **1,050 held-out Tatoeba sentences**, each word inherits its source sentence's language. All three methods assigned a language to 6,359 of 6,673 words. The separate KRCS mixed-message benchmark is awaiting bilingual reference labels.
+The **36 held-out KRCS messages** contained 190 Kazakh and 62 Russian scored words. The released word model used an uncertainty threshold chosen on the development set. It labeled 245 of 252 scored words and flagged 5 of the 7 Kazakh-only messages as mixed.
 
-| Method | Word macro-F1 | Kazakh F1 | Russian F1 | English F1 |
-|---|---:|---:|---:|---:|
-| Script rule | 0.856 | 0.794 | 0.797 | 0.975 |
-| Word-only (bundled) | **0.962** | 0.979 | 0.930 | 0.975 |
-| Word + context | 0.969 | 0.990 | 0.941 | 0.975 |
+| Method | Word macro-F1 | Kazakh F1 | Russian F1 |
+|---|---:|---:|---:|
+| Script rule | 0.541 | 0.566 | 0.517 |
+| Word-only | 0.890 | 0.936 | 0.843 |
+| Word + context | 0.886 | 0.938 | 0.833 |
+| Word-only with uncertainty threshold (bundled) | **0.897** | 0.933 | 0.861 |
 
-Tatoeba labels **«Он адам зардап шекті.»** Kazakh. TilSwitch marked **Он** Russian and **адам зардап шекті** Kazakh, triggering a mixed flag. **Он** also forms a common Russian pronoun. [Tatoeba sentence 2816435, ABChessel](https://tatoeba.org/en/sentences/show/2816435) · [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/)
+In **«Қалаға тек пропускпен кіреді десеші»**, the reference labels all five words Kazakh. TilSwitch marked **пропускпен** Russian and flagged the message as mixed. The Russian root takes the Kazakh ending **-пен**. [KRCS row 385, Borisov, Kozhirbayev and Malykh](https://github.com/madrugado/KRCS/blob/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+The KRCS test used one bilingual reviewer. On the separate **1,050-sentence Tatoeba benchmark** with sentence-derived labels, the script rule, word model and context model scored **0.856**, **0.962** and **0.969** macro-F1, respectively. [Full results and per-language scores](docs/RESULTS.md)
 
 ## What we would do next
 
-Complete blind bilingual review and measure whether context helps at real switch boundaries without reducing Kazakh recall or coverage.
+Ask a second bilingual reviewer to label a fresh sample with more Kazakh-only messages. Use it to measure how often borrowings and informal spellings cause false mixed flags.
 
 ## Sources
 
