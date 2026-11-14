@@ -25,8 +25,8 @@ Implementation is authorized and local work is tracked below. Use local Kazakhst
 | T10 | Mono complete, KRCS pending | P0 | Interpret failures and lock reporting / research lead | T09 | 60 min | Sun Nov 15 15:05 |
 | T11 | Complete locally | P0 | Wire Gradio or working demo fallback / product engineer | T07 for adapters, T09 for release model ID | 120 min | Sun Nov 15 17:20 |
 | T12 | Local QA complete, user review pending | P0 | Clean checkout and user acceptance / QA owner | T10, T11 | 105 min | Sun Nov 15 19:05 |
-| T13 | In progress | P0 | Write, credit, publish and link-check / entrant and writer | Draft with T10, final after T12 | 160 min in two blocks | Sun Nov 15 22:15 |
-| T14 | Queued | P0 | Submit and retain receipt / designated entrant | T13 | 35 min plus shared recovery buffer | Mon Nov 16 00:30 |
+| T13 | Fallback published and verified | P0 | Write, credit, publish and link-check / entrant and writer | Draft with T10, final after T12 | 160 min in two blocks | Sun Nov 15 22:15 |
+| T14 | Ready for entrant | P0 | Submit and retain receipt / designated entrant | T13 | 35 min plus shared recovery buffer | Mon Nov 16 00:30 |
 | T15 | Queued | P1 | Record optional video and verify update / presenter | T14 | 75 min | Mon Nov 16 08:30 |
 | T16 | Queued | P2 | Defer stretch research until release permits / team | T14, separate scope and dataset | 2 h minimum per experiment | Defer beyond this event by default |
 

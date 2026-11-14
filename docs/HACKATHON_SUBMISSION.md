@@ -1,6 +1,6 @@
 # TilSwitch AI hackathon submission plan
 
-The submission write-up is the [README](../README.md), with [results](RESULTS.md) and [source credits](DATA_AND_MODELS.md). The confirmed contributor is Nurmukhamed Sabit. The designated entrant submits through the official form and keeps the receipt. Update the research claims when the locked bilingual evaluation is available.
+The submission write-up is the GitHub README, with results and source credits. The confirmed contributor is Nurmukhamed Sabit. The word-only release and write-up were verified signed out on Nov 14. [Public code](https://github.com/thorfinn071/TilSwitch-AI-Veritas) · [Pinned write-up](https://github.com/thorfinn071/TilSwitch-AI-Veritas/blob/e725a7e721c4ea156096f0693e94f7fd51c850f6/README.md) · [Results](RESULTS.md) · [Credits](DATA_AND_MODELS.md)
 
 ## Official requirements and source precedence
 
@@ -17,7 +17,7 @@ The organizer PDF governs the track and document format. The official submission
 
 **Times** US ET kickoff Sat Nov 14 00:00 and hard close Sun Nov 15 23:59. Kazakhstan UTC+5 kickoff Sat Nov 14 10:00 and hard close Mon Nov 16 09:59. Target the first valid submission by Mon **00:30**. A late-start fallback targets Mon **06:30**. Record actual early submission and latest update times. [Roadmap](MASTER_PLAN.md#solo-schedule)
 
-The linked Airtable URL returned HTTP 200. Actual form acceptance and entrant registration remain unverified. In T01, the entrant checks the form and their starter email for the applicable route. If the form fails on submission, email the organizer immediately with both verified links. The official deadline still governs. [Official submission form](https://airtable.com/appypCyHN77hElIcS/shrXA5VBFdugmoXl6) · [Organizer instructions](https://highschoolhackathon.org/briefs)
+The official Airtable form displayed its Submit button in signed-out Chrome. The designated entrant submits through the form and keeps the receipt. If the form fails on submission, email the organizer immediately with both verified links. The official deadline still governs. [Official submission form](https://airtable.com/appypCyHN77hElIcS/shrXA5VBFdugmoXl6) · [Organizer instructions](https://highschoolhackathon.org/briefs)
 
 ## Public package
 
@@ -67,11 +67,11 @@ The highest-value additions after the minimum baseline work are a stronger bilin
 
 ## Submission checklist
 
-- [ ] Working public GitHub or Colab code with read permissions, pinned release identifier, instructions and demo output. Colab outputs are saved if that path is used.
-- [ ] Approximately one-page write-up in one accepted format with actual results, language-level scores, paired reference/prediction, one failure, original contribution and sources.
+- [x] Public GitHub code with read permissions, pinned write-up, runnable instructions and actual demo output.
+- [x] README write-up with word and language-level results, a paired reference and failed prediction, original contribution and sources.
 - [ ] Required track and names, emails and schools for all real contributors, as they should appear on certificates. One designated entrant submits for the team.
-- [ ] Every real dataset, model, tutorial, external library and AI tool credited with its link. Public paths and artifacts meet the data-release and model checks.
+- [x] Credits for the datasets, tools, libraries and prior work. The release includes model files and aggregate evidence and keeps raw data and review sheets local.
 - [ ] Optional video link works signed out and runs no more than 2:00. If absent, a working demo path still exists in code.
-- [ ] Open every submitted link signed out, independently exercise the README/Colab path and check results and labels against the exact release.
+- [x] Verified the fallback code, write-up, results and credits links signed out and ran the CLI and tests from an anonymous clone.
 - [ ] Submit early through the official form. Save time, receipt or confirmation and exact links. Follow the official contact route immediately if the form fails.
 - [ ] Resubmit only a verified improvement before close. Recheck links and keep the latest valid confirmation. [Testing definition of done](TESTING_PLAN.md#definition-of-done)
