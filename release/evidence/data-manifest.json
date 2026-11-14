@@ -1,0 +1,109 @@
+{
+  "counts": {
+    "dev": {
+      "en": 350,
+      "kk": 350,
+      "ru": 350
+    },
+    "test": {
+      "en": 350,
+      "kk": 350,
+      "ru": 350
+    },
+    "train": {
+      "en": 2000,
+      "kk": 2000,
+      "ru": 2000
+    }
+  },
+  "drops": {
+    "length_script_or_privacy": 57,
+    "lexical_count_or_wrong_script": 601
+  },
+  "parallel_links_in_pool": 24,
+  "protected_texts": 1854,
+  "review_inventory": {
+    "krcs": "a1ea9492b5f3effa0a788693d3fff674defc39b951f749c855bc7bcadbb0b015"
+  },
+  "schema_version": 1,
+  "seed": 1729,
+  "source_receipts": [
+    {
+      "last_modified": null,
+      "license_url": "https://raw.githubusercontent.com/madrugado/KRCS/9f4fea488bd85490c23ba33ebecc9362d901a21e/LICENSE",
+      "name": "KRCS.csv",
+      "retrieved_utc": "2026-11-14T13:52:08.995828+00:00",
+      "schema_version": 1,
+      "sha256": "9f4eb200f0c52188bdd39aea33bf4d44a7da81f00eb5f00a98aa807da80ccc6d",
+      "size_bytes": 289875,
+      "url": "https://raw.githubusercontent.com/madrugado/KRCS/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 07:46:26 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "kaz_sentences_detailed.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:09.006355+00:00",
+      "schema_version": 1,
+      "sha256": "77509ffeba335284b4733fa13e758d085945a13d0256245d18e242106a2cb283",
+      "size_bytes": 115723,
+      "url": "https://downloads.tatoeba.org/exports/per_language/kaz/kaz_sentences_detailed.tsv.bz2"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 07:46:26 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "rus_sentences_detailed.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:24.468237+00:00",
+      "schema_version": 1,
+      "sha256": "6a2617446a363d8bcac84fe8e6d02bf9416060200e42a07e8397e985c1d43237",
+      "size_bytes": 23703201,
+      "url": "https://downloads.tatoeba.org/exports/per_language/rus/rus_sentences_detailed.tsv.bz2"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 07:46:26 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "eng_sentences_detailed.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:33.463195+00:00",
+      "schema_version": 1,
+      "sha256": "f3a08a0af8deef3f50777cf0ccd7666f39e619f70fadae4327b7c29119468313",
+      "size_bytes": 34995780,
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences_detailed.tsv.bz2"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 08:14:10 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "kaz-eng_links.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:08.739065+00:00",
+      "schema_version": 1,
+      "sha256": "8a64ef6bf42308310a211a87fd045c512a66478d093a4b70c20deceeecba3be1",
+      "size_bytes": 4151,
+      "url": "https://downloads.tatoeba.org/exports/per_language/kaz/kaz-eng_links.tsv.bz2"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 08:13:35 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "kaz-rus_links.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:08.963754+00:00",
+      "schema_version": 1,
+      "sha256": "40d49ccfd10d346022fabc608b00f0f99b0a81f7cab8e8c270a706d5c9cb38a1",
+      "size_bytes": 20204,
+      "url": "https://downloads.tatoeba.org/exports/per_language/kaz/kaz-rus_links.tsv.bz2"
+    },
+    {
+      "last_modified": "Sat, 14 Nov 2026 08:14:10 GMT",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/fr/",
+      "name": "eng-rus_links.tsv.bz2",
+      "retrieved_utc": "2026-11-14T13:52:38.729006+00:00",
+      "schema_version": 1,
+      "sha256": "38edabc69db85cdc181908eb313da439a220a9cbf99c550ccfaed452fc1b60cf",
+      "size_bytes": 5030413,
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng-rus_links.tsv.bz2"
+    }
+  ],
+  "source_set": "tatoeba",
+  "source_snapshot_id": "d2c5ae88c007f0ae3fa26f838a466dc911708d19621c4d00ffdc87f6d6ec0d20",
+  "split_sha256": {
+    "dev": "65419a1a8a89556634258ff6d2a717b36ba6d98b15e82304ed7685da782dc1e3",
+    "test": "4d751561779616bf8fe5b679f59d11641e77c982770b01903d1e6af41b79495a",
+    "train": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662"
+  }
+}

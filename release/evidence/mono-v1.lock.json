@@ -1,0 +1,802 @@
+{
+  "dev": {
+    "context": {
+      "mono_base": {
+        "kazakh_spelling": {
+          "has_distinctive_letters": {
+            "messages": 336,
+            "recall": 1.0,
+            "tokens": 1225
+          },
+          "no_distinctive_letters": {
+            "messages": 312,
+            "recall": 0.9502688172043011,
+            "tokens": 744
+          }
+        },
+        "messages": 1050,
+        "sentence_outcomes": {
+          "accuracy": 0.7247619047619047,
+          "confusion": {
+            "en": {
+              "en": 243,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 107,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 322,
+              "mixed": 27,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 1
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 7,
+              "needs_review": 147,
+              "neutral_only": 0,
+              "ru": 196
+            }
+          },
+          "macro_f1": 0.8315103607357693,
+          "per_label": {
+            "en": {
+              "correct": 243,
+              "f1": 0.8195615514333895,
+              "precision": 1.0,
+              "predicted": 243,
+              "recall": 0.6942857142857143,
+              "support": 350
+            },
+            "kk": {
+              "correct": 322,
+              "f1": 0.9583333333333334,
+              "precision": 1.0,
+              "predicted": 322,
+              "recall": 0.92,
+              "support": 350
+            },
+            "ru": {
+              "correct": 196,
+              "f1": 0.716636197440585,
+              "precision": 0.9949238578680203,
+              "predicted": 197,
+              "recall": 0.56,
+              "support": 350
+            }
+          },
+          "units": 1050
+        },
+        "short_messages": 543,
+        "short_sentence_outcomes": {
+          "accuracy": 0.8047882136279927,
+          "confusion": {
+            "en": {
+              "en": 84,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 23,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 216,
+              "mixed": 15,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 1
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 2,
+              "needs_review": 65,
+              "neutral_only": 0,
+              "ru": 137
+            }
+          },
+          "macro_f1": 0.8816788189204834,
+          "per_label": {
+            "en": {
+              "correct": 84,
+              "f1": 0.8795811518324608,
+              "precision": 1.0,
+              "predicted": 84,
+              "recall": 0.7850467289719626,
+              "support": 107
+            },
+            "kk": {
+              "correct": 216,
+              "f1": 0.9642857142857143,
+              "precision": 1.0,
+              "predicted": 216,
+              "recall": 0.9310344827586207,
+              "support": 232
+            },
+            "ru": {
+              "correct": 137,
+              "f1": 0.8011695906432749,
+              "precision": 0.9927536231884058,
+              "predicted": 138,
+              "recall": 0.6715686274509803,
+              "support": 204
+            }
+          },
+          "units": 543
+        },
+        "short_tokens": {
+          "accepted": 2075,
+          "accepted_error": 0.009156626506024097,
+          "accuracy": 0.9474654377880184,
+          "confusion": {
+            "en": {
+              "en": 442,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 24
+            },
+            "kk": {
+              "en": 0,
+              "kk": 858,
+              "neutral": 0,
+              "ru": 17,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 2,
+              "neutral": 0,
+              "ru": 756,
+              "unk": 71
+            }
+          },
+          "coverage": 0.956221198156682,
+          "macro_f1": 0.9688124993372981,
+          "per_label": {
+            "en": {
+              "correct": 442,
+              "f1": 0.973568281938326,
+              "precision": 1.0,
+              "predicted": 442,
+              "recall": 0.9484978540772532,
+              "support": 466
+            },
+            "kk": {
+              "correct": 858,
+              "f1": 0.9890489913544669,
+              "precision": 0.9976744186046511,
+              "predicted": 860,
+              "recall": 0.9805714285714285,
+              "support": 875
+            },
+            "ru": {
+              "correct": 756,
+              "f1": 0.9438202247191011,
+              "precision": 0.9780077619663649,
+              "predicted": 773,
+              "recall": 0.9119420989143546,
+              "support": 829
+            }
+          },
+          "units": 2170
+        },
+        "tokens": {
+          "accepted": 6203,
+          "accepted_error": 0.007254554247944543,
+          "accuracy": 0.9441888991107023,
+          "confusion": {
+            "en": {
+              "en": 2438,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 121
+            },
+            "kk": {
+              "en": 0,
+              "kk": 1932,
+              "neutral": 0,
+              "ru": 37,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 8,
+              "neutral": 0,
+              "ru": 1788,
+              "unk": 198
+            }
+          },
+          "coverage": 0.9510886231217418,
+          "macro_f1": 0.9668814511159284,
+          "per_label": {
+            "en": {
+              "correct": 2438,
+              "f1": 0.9757854712827697,
+              "precision": 1.0,
+              "predicted": 2438,
+              "recall": 0.952715904650254,
+              "support": 2559
+            },
+            "kk": {
+              "correct": 1932,
+              "f1": 0.9884881043745203,
+              "precision": 0.9958762886597938,
+              "predicted": 1940,
+              "recall": 0.9812087353986796,
+              "support": 1969
+            },
+            "ru": {
+              "correct": 1788,
+              "f1": 0.9363707776904949,
+              "precision": 0.9797260273972602,
+              "predicted": 1825,
+              "recall": 0.8966900702106319,
+              "support": 1994
+            }
+          },
+          "units": 6522
+        }
+      },
+      "selected_threshold": 0.0,
+      "thresholds": [
+        {
+          "authored_switch": null,
+          "reviewed": null,
+          "threshold": 0.0
+        }
+      ]
+    },
+    "heuristic": {
+      "mono_base": {
+        "kazakh_spelling": {
+          "has_distinctive_letters": {
+            "messages": 336,
+            "recall": 1.0,
+            "tokens": 1225
+          },
+          "no_distinctive_letters": {
+            "messages": 312,
+            "recall": 0.0,
+            "tokens": 744
+          }
+        },
+        "messages": 1050,
+        "sentence_outcomes": {
+          "accuracy": 0.4580952380952381,
+          "confusion": {
+            "en": {
+              "en": 243,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 107,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 38,
+              "mixed": 298,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 14
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 150,
+              "neutral_only": 0,
+              "ru": 200
+            }
+          },
+          "macro_f1": 0.5748858994164039,
+          "per_label": {
+            "en": {
+              "correct": 243,
+              "f1": 0.8195615514333895,
+              "precision": 1.0,
+              "predicted": 243,
+              "recall": 0.6942857142857143,
+              "support": 350
+            },
+            "kk": {
+              "correct": 38,
+              "f1": 0.1958762886597938,
+              "precision": 1.0,
+              "predicted": 38,
+              "recall": 0.10857142857142857,
+              "support": 350
+            },
+            "ru": {
+              "correct": 200,
+              "f1": 0.7092198581560284,
+              "precision": 0.9345794392523364,
+              "predicted": 214,
+              "recall": 0.5714285714285714,
+              "support": 350
+            }
+          },
+          "units": 1050
+        },
+        "short_messages": 543,
+        "short_sentence_outcomes": {
+          "accuracy": 0.4714548802946593,
+          "confusion": {
+            "en": {
+              "en": 84,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 23,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 34,
+              "mixed": 184,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 14
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 66,
+              "neutral_only": 0,
+              "ru": 138
+            }
+          },
+          "macro_f1": 0.6368337161510754,
+          "per_label": {
+            "en": {
+              "correct": 84,
+              "f1": 0.8795811518324608,
+              "precision": 1.0,
+              "predicted": 84,
+              "recall": 0.7850467289719626,
+              "support": 107
+            },
+            "kk": {
+              "correct": 34,
+              "f1": 0.2556390977443609,
+              "precision": 1.0,
+              "predicted": 34,
+              "recall": 0.14655172413793102,
+              "support": 232
+            },
+            "ru": {
+              "correct": 138,
+              "f1": 0.7752808988764045,
+              "precision": 0.9078947368421053,
+              "predicted": 152,
+              "recall": 0.6764705882352942,
+              "support": 204
+            }
+          },
+          "units": 543
+        },
+        "short_tokens": {
+          "accepted": 2075,
+          "accepted_error": 0.17301204819277108,
+          "accuracy": 0.7907834101382488,
+          "confusion": {
+            "en": {
+              "en": 442,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 24
+            },
+            "kk": {
+              "en": 0,
+              "kk": 516,
+              "neutral": 0,
+              "ru": 359,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 758,
+              "unk": 71
+            }
+          },
+          "coverage": 0.956221198156682,
+          "macro_f1": 0.8315048303256839,
+          "per_label": {
+            "en": {
+              "correct": 442,
+              "f1": 0.973568281938326,
+              "precision": 1.0,
+              "predicted": 442,
+              "recall": 0.9484978540772532,
+              "support": 466
+            },
+            "kk": {
+              "correct": 516,
+              "f1": 0.7419122933141624,
+              "precision": 1.0,
+              "predicted": 516,
+              "recall": 0.5897142857142857,
+              "support": 875
+            },
+            "ru": {
+              "correct": 758,
+              "f1": 0.7790339157245632,
+              "precision": 0.6786034019695614,
+              "predicted": 1117,
+              "recall": 0.9143546441495778,
+              "support": 829
+            }
+          },
+          "units": 2170
+        },
+        "tokens": {
+          "accepted": 6203,
+          "accepted_error": 0.11994196356601644,
+          "accuracy": 0.837013186139221,
+          "confusion": {
+            "en": {
+              "en": 2438,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 121
+            },
+            "kk": {
+              "en": 0,
+              "kk": 1225,
+              "neutral": 0,
+              "ru": 744,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 1796,
+              "unk": 198
+            }
+          },
+          "coverage": 0.9510886231217418,
+          "macro_f1": 0.8450283835609159,
+          "per_label": {
+            "en": {
+              "correct": 2438,
+              "f1": 0.9757854712827697,
+              "precision": 1.0,
+              "predicted": 2438,
+              "recall": 0.952715904650254,
+              "support": 2559
+            },
+            "kk": {
+              "correct": 1225,
+              "f1": 0.7670632435817157,
+              "precision": 1.0,
+              "predicted": 1225,
+              "recall": 0.622143219908583,
+              "support": 1969
+            },
+            "ru": {
+              "correct": 1796,
+              "f1": 0.792236435818262,
+              "precision": 0.7070866141732284,
+              "predicted": 2540,
+              "recall": 0.9007021063189569,
+              "support": 1994
+            }
+          },
+          "units": 6522
+        }
+      },
+      "selected_threshold": 0.0,
+      "thresholds": [
+        {
+          "authored_switch": null,
+          "reviewed": null,
+          "threshold": 0.0
+        }
+      ]
+    },
+    "word": {
+      "mono_base": {
+        "kazakh_spelling": {
+          "has_distinctive_letters": {
+            "messages": 336,
+            "recall": 1.0,
+            "tokens": 1225
+          },
+          "no_distinctive_letters": {
+            "messages": 312,
+            "recall": 0.9099462365591398,
+            "tokens": 744
+          }
+        },
+        "messages": 1050,
+        "sentence_outcomes": {
+          "accuracy": 0.6933333333333334,
+          "confusion": {
+            "en": {
+              "en": 243,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 107,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 293,
+              "mixed": 57,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 18,
+              "needs_review": 140,
+              "neutral_only": 0,
+              "ru": 192
+            }
+          },
+          "macro_f1": 0.8131338896545491,
+          "per_label": {
+            "en": {
+              "correct": 243,
+              "f1": 0.8195615514333895,
+              "precision": 1.0,
+              "predicted": 243,
+              "recall": 0.6942857142857143,
+              "support": 350
+            },
+            "kk": {
+              "correct": 293,
+              "f1": 0.911353032659409,
+              "precision": 1.0,
+              "predicted": 293,
+              "recall": 0.8371428571428572,
+              "support": 350
+            },
+            "ru": {
+              "correct": 192,
+              "f1": 0.7084870848708487,
+              "precision": 1.0,
+              "predicted": 192,
+              "recall": 0.5485714285714286,
+              "support": 350
+            }
+          },
+          "units": 1050
+        },
+        "short_messages": 543,
+        "short_sentence_outcomes": {
+          "accuracy": 0.7642725598526704,
+          "confusion": {
+            "en": {
+              "en": 84,
+              "kk": 0,
+              "mixed": 0,
+              "needs_review": 23,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "kk": {
+              "en": 0,
+              "kk": 198,
+              "mixed": 34,
+              "needs_review": 0,
+              "neutral_only": 0,
+              "ru": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 0,
+              "mixed": 6,
+              "needs_review": 65,
+              "neutral_only": 0,
+              "ru": 133
+            }
+          },
+          "macro_f1": 0.863276297269666,
+          "per_label": {
+            "en": {
+              "correct": 84,
+              "f1": 0.8795811518324608,
+              "precision": 1.0,
+              "predicted": 84,
+              "recall": 0.7850467289719626,
+              "support": 107
+            },
+            "kk": {
+              "correct": 198,
+              "f1": 0.9209302325581395,
+              "precision": 1.0,
+              "predicted": 198,
+              "recall": 0.853448275862069,
+              "support": 232
+            },
+            "ru": {
+              "correct": 133,
+              "f1": 0.7893175074183977,
+              "precision": 1.0,
+              "predicted": 133,
+              "recall": 0.6519607843137255,
+              "support": 204
+            }
+          },
+          "units": 543
+        },
+        "short_tokens": {
+          "accepted": 2075,
+          "accepted_error": 0.020240963855421686,
+          "accuracy": 0.9368663594470046,
+          "confusion": {
+            "en": {
+              "en": 442,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 24
+            },
+            "kk": {
+              "en": 0,
+              "kk": 839,
+              "neutral": 0,
+              "ru": 36,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 6,
+              "neutral": 0,
+              "ru": 752,
+              "unk": 71
+            }
+          },
+          "coverage": 0.956221198156682,
+          "macro_f1": 0.9597557262777454,
+          "per_label": {
+            "en": {
+              "correct": 442,
+              "f1": 0.973568281938326,
+              "precision": 1.0,
+              "predicted": 442,
+              "recall": 0.9484978540772532,
+              "support": 466
+            },
+            "kk": {
+              "correct": 839,
+              "f1": 0.9755813953488373,
+              "precision": 0.9928994082840237,
+              "predicted": 845,
+              "recall": 0.9588571428571429,
+              "support": 875
+            },
+            "ru": {
+              "correct": 752,
+              "f1": 0.930117501546073,
+              "precision": 0.9543147208121827,
+              "predicted": 788,
+              "recall": 0.9071170084439083,
+              "support": 829
+            }
+          },
+          "units": 2170
+        },
+        "tokens": {
+          "accepted": 6203,
+          "accepted_error": 0.014025471546026116,
+          "accuracy": 0.9377491567003986,
+          "confusion": {
+            "en": {
+              "en": 2438,
+              "kk": 0,
+              "neutral": 0,
+              "ru": 0,
+              "unk": 121
+            },
+            "kk": {
+              "en": 0,
+              "kk": 1902,
+              "neutral": 0,
+              "ru": 67,
+              "unk": 0
+            },
+            "ru": {
+              "en": 0,
+              "kk": 20,
+              "neutral": 0,
+              "ru": 1776,
+              "unk": 198
+            }
+          },
+          "coverage": 0.9510886231217418,
+          "macro_f1": 0.9597164672928685,
+          "per_label": {
+            "en": {
+              "correct": 2438,
+              "f1": 0.9757854712827697,
+              "precision": 1.0,
+              "predicted": 2438,
+              "recall": 0.952715904650254,
+              "support": 2559
+            },
+            "kk": {
+              "correct": 1902,
+              "f1": 0.9776407093292213,
+              "precision": 0.9895941727367326,
+              "predicted": 1922,
+              "recall": 0.9659725749111224,
+              "support": 1969
+            },
+            "ru": {
+              "correct": 1776,
+              "f1": 0.9257232212666145,
+              "precision": 0.9636462289744981,
+              "predicted": 1843,
+              "recall": 0.8906720160481444,
+              "support": 1994
+            }
+          },
+          "units": 6522
+        }
+      },
+      "selected_threshold": 0.0,
+      "thresholds": [
+        {
+          "authored_switch": null,
+          "reviewed": null,
+          "threshold": 0.0
+        }
+      ]
+    }
+  },
+  "dev_gold_sha256": {},
+  "informal_dev": null,
+  "models": {
+    "context": {
+      "manifest_sha256": "154241f429d2fba24129c4581b7601e858832bfb945a459d86e19d73b50b2821",
+      "model_id": "context-abf81e3da4"
+    },
+    "word": {
+      "manifest_sha256": "e3d452d6c69958fe72a72429a212f4948d9d8c9662eb6987e96ed8820492b4b7",
+      "model_id": "word-abf81e3da4"
+    }
+  },
+  "policies": {
+    "context": {
+      "mixed_review_recommended": true,
+      "threshold": 0.0
+    },
+    "heuristic": {
+      "mixed_review_recommended": true,
+      "threshold": 0.0
+    },
+    "word": {
+      "mixed_review_recommended": true,
+      "threshold": 0.0
+    }
+  },
+  "prepared_manifest_sha256": "e54a9320f6db1c6509db2f25f0a1eea5ba9e1de890c2342609c64bea263b19c1",
+  "release_model": "word",
+  "schema_version": 1,
+  "source_set": "tatoeba",
+  "test": {
+    "mono": {
+      "sha256": "4d751561779616bf8fe5b679f59d11641e77c982770b01903d1e6af41b79495a",
+      "supports_primary": true
+    }
+  }
+}

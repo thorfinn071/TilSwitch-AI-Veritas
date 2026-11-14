@@ -1,0 +1,31 @@
+[project]
+name = "tilswitch"
+version = "0.1.0"
+description = "Word-level language identification for Kazakh, Russian and English"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "joblib==1.5.2",
+    "regex==2025.9.18",
+    "threadpoolctl==3.6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+demo = ["gradio==6.32.0"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tilswitch*"]
+
+[tool.setuptools.package-data]
+tilswitch = ["demo.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

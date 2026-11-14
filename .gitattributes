@@ -1,0 +1,3 @@
+# Model manifests and experiment receipts record exact byte hashes.
+/release/** -text
+/release/evidence/*.csv whitespace=cr-at-eol

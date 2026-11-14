@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "source_set": "tatoeba",
+  "data_dir": "data",
+  "artifact_dir": "artifacts",
+  "split_seed": 1729,
+  "thresholds": [0.0, 0.1, 0.2, 0.35],
+  "candidate_limit": 5000,
+  "train_limit_per_language": 2000,
+  "dev_test_limit_per_language": 350,
+  "train_tokens_per_language": 20000,
+  "external_dev_messages": 12,
+  "external_test_messages": 36,
+  "max_features": 30000,
+  "neighbor_weight": 0.35
+}

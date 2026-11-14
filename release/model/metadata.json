@@ -1,0 +1,35 @@
+{
+  "classes": [
+    "en",
+    "kk",
+    "ru"
+  ],
+  "environment": {
+    "libraries": {
+      "numpy": "2.2.6",
+      "regex": "2025.9.18",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.6.0"
+    },
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python": "3.11.9"
+  },
+  "evaluation_lock_sha256": "8d325a2e42e39be3a2b3986bf3b70c6faf8b3549e872bbc248c654784cc8a6a2",
+  "features": 24274,
+  "fit_seconds": 2.465,
+  "iterations": 32,
+  "max_iterations": 400,
+  "mode": "word",
+  "model_id": "word-abf81e3da4",
+  "neighbor_weight": 0.35,
+  "schema_version": 1,
+  "split_seed": 1729,
+  "train_sha256": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662",
+  "training_word_counts": {
+    "en": 14066,
+    "kk": 11501,
+    "ru": 10243
+  },
+  "vocabulary_size": 24274
+}
