@@ -51,7 +51,7 @@ The final development sheet had 47 Kazakh and 34 Russian words. The lock tested 
 | Script rule | 0.541 | 1.000 / 0.395 / 0.566 | 0.351 / 0.984 / 0.517 | 249/252 |
 | Word-only, base | 0.890 | 0.988 / 0.889 / 0.936 | 0.756 / 0.952 / 0.843 | 249/252 |
 | Word + context, base | 0.886 | 0.966 / 0.911 / 0.938 | 0.786 / 0.887 / 0.833 | 249/252 |
-| Word-only, threshold 0.10 (bundled) | **0.897** | 0.988 / 0.884 / 0.933 | 0.787 / 0.952 / 0.861 | 245/252 |
+| Original release, threshold 0.10 | **0.897** | 0.988 / 0.884 / 0.933 | 0.787 / 0.952 / 0.861 | 245/252 |
 | Word + context, threshold 0.10 | 0.894 | 0.977 / 0.911 / 0.943 | 0.809 / 0.887 / 0.846 | 245/252 |
 
 P and R are precision and recall. The base word model gained 0.348 macro-F1 over the script rule. Context gained 0.344 over the script rule and scored 0.004 below word-only. The 95% paired bootstrap interval for context minus word-only was [−0.041, +0.031], using 2,000 valid resamples of 36 message groups with seed 3701. The word-only threshold improved macro-F1 by 0.008. Errors among assigned words fell from 21/249 to 18/245, and the number of correct words fell from 228 to 227. The aggregate JSON includes the confusion matrices and uncertain outcomes. [Summary](../release/evidence/krcs-summary.json) · [Per-language CSV](../release/evidence/krcs-per-language.csv) · [Bootstrap](../release/evidence/krcs-bootstrap.json)
@@ -73,17 +73,86 @@ A short message has at most five lexical words. A word is at a switch when an im
 | Script rule | 19/29 | 10 | 5/7 | 0.792 | 0.655 | 0.717 | 0 |
 | Word-only, base | 27/29 | 2 | 6/7 | 0.818 | 0.931 | 0.871 | 1 |
 | Word + context, base or threshold 0.10 | 25/29 | 4 | 3/7 | 0.893 | 0.862 | 0.877 | 1 |
-| Word-only, threshold 0.10 (bundled) | 26/29 | 3 | 5/7 | 0.839 | 0.897 | 0.867 | 3 |
+| Original release, threshold 0.10 | 26/29 | 3 | 5/7 | 0.839 | 0.897 | 0.867 | 3 |
 
 Needs review counts as a negative mixed prediction. The small non-mixed slice makes the false mixed counts descriptive. The app displays mixed evidence with review wording.
 
-| KRCS test input | Human reference by word | Bundled output by word | Message outcome |
+| KRCS test input | Human reference by word | Original release output by word | Message outcome |
 |---|---|---|---|
 | 343 · Японский стиль жарасады | RU · RU · KK | RU · RU · KK | Correct mixed flag |
 | 385 · Қалаға тек пропускпен кіреді десеші | KK · KK · KK · KK · KK | KK · KK · RU · KK · KK | False mixed flag |
 | 127 · лучшая гой | RU · KK | RU · RU | Missed switch |
 
 The Russian root in **пропускпен** may explain the wrong label despite the Kazakh ending. **гой** is the informal spelling of **ғой** in its reference reading. The original excerpts are shown with added human and model labels. [KRCS, Borisov, Kozhirbayev and Malykh](https://github.com/madrugado/KRCS/blob/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+## Updated switch and borrowing policy, Nov 15, 2026
+
+The new policy uses the original trained word model. It returns **Possible switch** when there is too little evidence to make a firm mixed call. A single word can support a firm switch when its top two class scores differ by at least 0.20. Two accepted words in the same language also count as evidence. The borrowing check asks for review when an instrumental ending fits a Russian-looking stem, removing the ending strengthens the stem's Russian score, and a nearby word supplies Kazakh evidence. In KRCS row 385 the app now marks **пропускпен** uncertain and explains the possible Kazakh ending.
+
+Development compared several one-word margins on the author-provided KazNLP validation split (462 messages), the 12 reviewed KRCS development messages and 12 scripted school cases. The 0.20 margin reduced firm mixed calls on single-language references from 107 to 99 on KazNLP validation, with 160 of 162 clause-level mixed messages detected in both runs. It retained each mixed and one-word detection count on the two smaller development sets. The policy was fixed before scoring the published KazNLP test split. The exact and near-duplicate screen checked the training, KRCS and scripted inventories as well as the upstream validation/test boundary. All 461 author test messages passed screening. [Author splits](https://github.com/naadgob/KazNLP/tree/f5d5be8108179aded06e145ad6eb019489f207e4/data/training/filter/v1) · [Annotation paper](https://arxiv.org/abs/2608.00581)
+
+| KazNLP test outcome | Original release | Updated policy |
+|---|---:|---:|
+| Firm mixed on Kazakh-only reference | 49/150 | 47/150 |
+| Firm mixed on Russian-only reference | 38/150 | 35/150 |
+| Firm mixed on clause-level mixed reference | 159/161 | 159/161 |
+| Possible switch on a single-language reference | 0/300 | 5/300 |
+
+KazNLP uses document labels and counts clause-level alternation. This benchmark measures how often the app makes a firm mixed call against those labels. The five changes moved to **Possible switch**, with the word highlights still visible.
+
+On the previously scored 36-message KRCS replay, firm false mixed flags fell from 5 to 4 of 7, true mixed detection stayed at 26 of 29, and genuine one-word switch detection stayed at 15 of 17. Word macro-F1 was 0.897 and 0.904 respectively, while coverage decreased from 245 to 243 of 252 scored words. On the 20 AI-authored challenge messages, firm false mixed flags fell from 4 to 2 of 12, with all eight scripted mixed messages detected in both runs. Informal spellings remain a source of missed switches. These counts do not measure usability in live school chats. [Aggregate evidence](../release/evidence/borrowing-review.json)
+
+For a local reproduction, download the pinned author files `val.csv` and `test.csv` into one folder. Use the original prepared Tatoeba training split and validated KRCS sheets. Place the [original bundle](https://github.com/thorfinn071/TilSwitch-AI-Veritas/tree/988119e483ffd6b8c26e9543a98e7ec044e592d0/release/model) in `artifacts/models/krcs-release`, or point `--baseline` to that bundle. Run `python -m experiments.borrowing_review --kaznlp-dir PATH_TO_FOLDER`.
+
+## Informal spellings and short words, Nov 15, 2026
+
+The word-recovery bundle in `release/model` uses the original trained weights and adds two sources of word evidence. It may recognize a Kazakh spelling with distinctive letters omitted when a confident Kazakh word is nearby. A smaller set has independent support from at least two non-overlapping KRCS original–translation groups and can be recognized without a Kazakh neighbor. The lookup excludes spellings also observed in the original Russian training words or in a Russian translation used to build the lookup. The 48 reviewed KRCS groups and near-duplicates of their variants were excluded from building it. Alignments supply weak evidence. The two language references sometimes share or paraphrase a word.
+
+A common one-letter word can join an adjacent phrase with enough language evidence. Context stops at sentence punctuation, line breaks, numbers, links and unsupported words. The app preserves the original spelling and offsets. It can now copy **в актовом зале** as one Russian phrase and recognize the authored **Кун ашык далага шыгамыз** as Kazakh.
+
+We selected the evidence rules on the existing development sets and 100 paired FLORES `dev` groups, then froze the code, model and test inventory. The FLORES `devtest` benchmark uses 200 disjoint groups. Each group contributes six controlled examples. The plain samples inherit their source language. The informal version removes distinctive Kazakh letters, and each mixed variant inserts one word whose source language is known. The source screening checks against the original training text, all accessible KRCS variants and the upstream development groups. These are constructed examples from human translations. [FLORES-200 source](https://github.com/facebookresearch/flores)
+
+| Frozen check | Prior review policy | With word recovery |
+|---|---:|---:|
+| Correct Kazakh words after distinctive letters were removed | 841/1,200 | 941/1,200 |
+| Firm mixed calls on those Kazakh fragments | 162/200 | 124/200 |
+| Correct Russian words in plain fragments | 1,033/1,200 | 1,132/1,200 |
+| Correct English words in plain fragments | 1,165/1,200 | 1,192/1,200 |
+| Correct inserted Russian word | 189/200 | 189/200 |
+| Correct inserted Kazakh word | 194/200 | 194/200 |
+| KRCS replay word macro-F1 | 0.904 | 0.922 |
+| KRCS replay word coverage | 243/252 | 244/252 |
+| KRCS replay genuine one-word switches detected | 15/17 | 16/17 |
+
+On the 36-message replay, total mixed detection rose from 26 to 27 of 29. Four of seven Kazakh-only messages still produced a firm mixed flag. On the KazNLP replay, the counts stayed at 47 of 150 for Kazakh-only references, 35 of 150 for Russian-only references and 159 of 161 for clause-level mixed references. The latest bundle still treats some integrated loans as Russian. KRCS row 36 remains a false flag on the attached form **Платныйма**. These measurements support targeted accuracy improvements. Live school-chat coverage still needs a fresh bilingual-reviewed test. [Aggregate evidence](../release/evidence/word-recovery.json)
+
+To rebuild the evidence with the frozen local data, use the same original bundle and author files as the borrowing-policy check. Place the pinned FLORES archive in `data/raw`. Run `python -m experiments.word_recovery lock --out artifacts/runs/word-recovery-recheck --kaznlp-dir PATH_TO_FOLDER`, then run the same command with `score` in place of `lock`.
+
+## Firm Mixed alert cutoff selection, Nov 15, 2026
+
+The locked comparison used the word-recovery bundle and two cutoffs for a single word to support a firm Mixed alert. The candidate raises that cutoff from 0.20 to 0.35. Both policies use a 0.10 word-label threshold and produce identical word labels, highlights and coverage. The decision rule required fewer false firm alerts and at least the same number of detected mixed messages and one-word switches.
+
+The held-out batch contains 60 short, deliberately selected public comments and reviews from the upstream KazNLP training split. Codex drafted the word labels and one bilingual reviewer confirmed them with the prefilled labels visible. Independent reviewer agreement is unmeasured. Fourteen messages have an indeterminate reference and are excluded from the binary alert scores. [Pinned KazNLP source](https://github.com/naadgob/KazNLP/blob/f5d5be8108179aded06e145ad6eb019489f207e4/data/training/filter/v1/train.csv)
+
+| Held-out message outcome | 0.20 cutoff | 0.35 candidate |
+|---|---:|---:|
+| Firm Mixed on resolved single-language references | 4/26 | 2/26 |
+| Firm Mixed on Kazakh-only references | 0/6 | 0/6 |
+| Firm Mixed on Russian-only references | 4/20 | 2/20 |
+| Firm Mixed on confirmed mixed references | 20/20 | 20/20 |
+| Firm Mixed on confirmed one-word switches | 10/10 | 10/10 |
+| Firm Mixed on indeterminate references | 11/14 | 10/14 |
+
+The candidate moved two Russian-only messages and one indeterminate message to Possible switch. Both policies assigned a language to 507 of 509 scored Kazakh and Russian words. Kazakh recall was 225/228 and Russian recall was 274/281. We chose 0.35 using this comparison and its locked decision rule. The cutoff still needs independent confirmation. The six resolved Kazakh-only messages and ten one-word switches give limited information about error rates on other texts. [Submission bundle and aggregate evidence](../release/submission/reviewed-switch.json)
+
+From a clean checkout with the pinned dependencies, run `python -m experiments.verify_submission` to check the release bundle against the aggregate evidence. An exact replay uses the [packaging command](../experiments/package_reviewed_switch.py) with the original lock, local reviewed annotations and matching Windows environment. It checks the locked decision rule and writes a new candidate directory.
+
+```powershell
+python -m experiments.package_reviewed_switch --lock artifacts/runs/reviewed-switch-v1/lock.json --out artifacts/reviewed-switch-replay
+python -m tilswitch demo --bundle release/submission/model
+```
+
+Use a new `--out` path for another run. Reproduce the comparison with the fixed 0.20 reference in `release/model`. Keep the raw annotations local.
 
 ## CPU timing
 

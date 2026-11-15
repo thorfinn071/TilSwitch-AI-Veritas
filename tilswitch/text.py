@@ -5,6 +5,8 @@ import regex
 from .types import InputError, Token
 
 KAZAKH_LETTERS = frozenset("әғқңөұүһі")
+VOICELESS = "пфкқтсшщхчц"
+VOICED_OBSTRUENTS = "бвгғдджз"
 APOSTROPHES = "'’ʼ‘"
 DASHES = "-‐‑‒–—"
 FEATURE_TRANSLATION = str.maketrans({**dict.fromkeys(APOSTROPHES, "'"), **dict.fromkeys(DASHES, "-")})
@@ -29,6 +31,14 @@ INVALID_CONTROL = regex.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 def normalize_word(surface: str) -> str:
     surface = unicodedata.normalize("NFC", surface).casefold().translate(FEATURE_TRANSLATION)
     return unicodedata.normalize("NFC", surface)
+
+
+def kazakh_instrumental(final: str) -> str:
+    if final in VOICELESS:
+        return "пен"
+    if final in VOICED_OBSTRUENTS:
+        return "бен"
+    return "мен"
 
 
 def validate_text(raw: str) -> None:
@@ -100,15 +110,16 @@ def _ends_context(token: Token) -> bool:
     return token.reason in {"link", "handle", "number", "emoji"} or bool(TERMINAL.intersection(token.text))
 
 
-def context_indices(raw: str, tokens: list[Token]) -> list[tuple[int | None, int | None]]:
+def context_indices(raw: str, tokens: list[Token], *, include_short: bool = False) -> list[tuple[int | None, int | None]]:
     left = [None] * len(tokens)
     right = [None] * len(tokens)
     previous = None
     offset = 0
     for index, token in enumerate(tokens):
-        if LINE_BREAK.search(raw[offset:token.start]) or _ends_context(token):
+        eligible = token.lexical and (token.reason is None or (include_short and token.reason == "short_word"))
+        if LINE_BREAK.search(raw[offset:token.start]) or (not eligible and _ends_context(token)):
             previous = None
-        if token.lexical and token.reason is None:
+        if eligible:
             left[index] = previous
             if previous is not None:
                 right[previous] = index

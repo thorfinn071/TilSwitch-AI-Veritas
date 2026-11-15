@@ -43,7 +43,7 @@ html, body { overflow-x: clip; }
 }
 
 #workspace {
-    width: min(100%, 920px);
+    width: min(100%, 1080px);
     min-width: 0;
     margin-inline: auto;
     gap: var(--space-4);
@@ -64,10 +64,18 @@ html, body { overflow-x: clip; }
 }
 
 #page-intro, #app-scope { padding: 0; border: 0; background: transparent; }
+#workspace .html-container { padding: 0; }
 .tool-intro p, .scope-note p {
     font: 400 1rem/1.5 var(--font-ui);
     color: var(--muted);
     margin: 0;
+}
+
+#analysis-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    gap: var(--space-4);
 }
 
 #composer {
@@ -79,6 +87,8 @@ html, body { overflow-x: clip; }
 }
 
 #source-text, #input-error, #analysis-result { border: 0; padding: 0; background: transparent; }
+#composer .form { border: 0; background: transparent; }
+#input-error:not(:has(p)) { display: none; }
 #source-text label, #source-text label > span {
     font: 650 1rem/1.5 var(--font-ui);
     color: var(--ink);
@@ -140,13 +150,16 @@ html, body { overflow-x: clip; }
 }
 #actions button.secondary:hover, #examples button:hover { background: var(--accent-wash); }
 #examples {
-    margin-top: calc(-1 * var(--space-1));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
 }
 #examples button {
-    width: max-content !important;
-    max-width: 100%;
+    width: 100% !important;
+    white-space: normal;
     padding-inline: var(--space-3);
 }
+#examples button:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .example-label {
     display: block;
     color: var(--muted);
@@ -168,14 +181,13 @@ html, body { overflow-x: clip; }
     font: 650 1.12rem/1.35 var(--font-ui);
     margin: 0 0 var(--space-2);
 }
-.analysis-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); }
-.analysis-header p, .analysis-empty, .analysis-note {
+.analysis-status, .analysis-empty, .analysis-note, .copy-status {
     color: var(--muted);
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
 }
-.analysis-header p { font-weight: 650; }
+.analysis-status { font-weight: 650; }
 .analysis-original {
     font: 500 clamp(1.125rem, 2.6vw, 1.4rem)/1.9 var(--font-text);
     white-space: break-spaces;
@@ -196,16 +208,28 @@ html, body { overflow-x: clip; }
 .segment-section h3 { font-size: 0.95rem; }
 .segments li {
     display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
-    align-items: baseline;
+    grid-template-columns: 88px minmax(0, 1fr) auto;
+    align-items: center;
     gap: var(--space-1) var(--space-2);
     border-bottom: 1px solid var(--line);
     padding-block: var(--space-2);
 }
 .segments li:last-child { border-bottom: 0; }
-.segments .language-key { justify-self: start; }
+.segments .language-key { grid-column: 1; justify-self: start; }
 .segment-content { font: 400 1.05rem/1.5 var(--font-text); white-space: break-spaces; overflow-wrap: anywhere; }
-.segments small { grid-column: 2; color: var(--muted); }
+.segment-content, .segments small { grid-column: 2; }
+.segments small { color: var(--muted); }
+#workspace .copy-phrase {
+    grid-column: 3;
+    grid-row: 1;
+    min-width: 72px;
+    padding-inline: var(--space-2);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--accent);
+}
+#workspace .copy-phrase:hover { background: var(--accent-wash); }
+.copy-status:not(:empty) { margin-top: var(--space-2); }
 .model-details {
     color: var(--muted);
     font-size: 0.875rem;
@@ -222,10 +246,15 @@ html, body { overflow-x: clip; }
 .scope-note { display: grid; gap: var(--space-1); padding: var(--space-2) var(--space-1); }
 .scope-note p { font-size: 0.875rem; }
 
+@media (max-width: 780px) {
+    #analysis-layout { grid-template-columns: minmax(0, 1fr); }
+}
+
 @media (max-width: 480px) {
     #composer, .analysis { padding: var(--space-4); }
-    #examples { align-items: stretch; }
-    .segments li { grid-template-columns: 80px minmax(0, 1fr); }
+    .segments li { grid-template-columns: minmax(0, 1fr) auto; }
+    .segment-content, .segments small { grid-column: 1; }
+    #workspace .copy-phrase { grid-column: 2; grid-row: 1 / span 2; }
 }
 
 @media (prefers-reduced-motion: reduce) {

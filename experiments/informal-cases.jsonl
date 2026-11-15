@@ -1,0 +1,32 @@
+{"message_id":"school-dev-lab","group_id":"school-dev-lab","split":"dev","text":"Бүгін сканермен парақты көшірдік","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-dev-handout","group_id":"school-dev-handout","split":"dev","text":"Географиядан распечаткаға белгі қойдым","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-dev-library","group_id":"school-dev-library","split":"dev","text":"Бугин китапты кайтардым","labels":["kk","kk","kk"]}
+{"message_id":"school-dev-art","group_id":"school-dev-art","split":"dev","text":"Мы фотку в чат закинули","labels":["ru","ru","ru","ru","ru"]}
+{"message_id":"school-dev-vote","group_id":"school-dev-vote","split":"dev","text":"Закиньте ссылку в телегу","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-dev-homework","group_id":"school-dev-homework","split":"dev","text":"Я уже загрузил презенташку","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-dev-rehearsal","group_id":"school-dev-rehearsal","split":"dev","text":"Қойылымға завтра дайындаламыз","labels":["kk","ru","kk"]}
+{"message_id":"school-dev-lesson","group_id":"school-dev-lesson","split":"dev","text":"Можно пересдать биологиядан","labels":["ru","ru","kk"]}
+{"message_id":"school-dev-deadline","group_id":"school-dev-deadline","split":"dev","text":"Тапсырманы срочно жібер","labels":["kk","ru","kk"]}
+{"message_id":"school-dev-club","group_id":"school-dev-club","split":"dev","text":"Жарыс бітті, мы едем домой","labels":["kk","kk","ru","ru","ru"]}
+{"message_id":"school-dev-announcement","group_id":"school-dev-announcement","split":"dev","text":"После репетиции ата-аналар келеді","labels":["ru","ru","kk","kk"]}
+{"message_id":"school-dev-walk","group_id":"school-dev-walk","split":"dev","text":"Дала салқын, возьми тёплую куртку","labels":["kk","kk","ru","ru","ru"]}
+{"message_id":"school-test-gym","group_id":"school-test-gym","split":"test","text":"Спортзалдан волейболға тор әкелдік","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-sound","group_id":"school-test-sound","split":"test","text":"Колонкамен ән қойып көрдік","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-computers","group_id":"school-test-computers","split":"test","text":"Кулерден дыбыс шығып тұр","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-workshop","group_id":"school-test-workshop","split":"test","text":"Лазермен ағашқа сурет салдық","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-music","group_id":"school-test-music","split":"test","text":"Ан айтуга дайынсындар ма","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-courtyard","group_id":"school-test-courtyard","split":"test","text":"Кун ашык далага шыгамыз","labels":["kk","kk","kk","kk"]}
+{"message_id":"school-test-handout","group_id":"school-test-handout","split":"test","text":"Скинь скрин по алгебре","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-test-battery","group_id":"school-test-battery","split":"test","text":"У ноута зарядка села","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-test-stage","group_id":"school-test-stage","split":"test","text":"Бэкстейдж закинул в общий чатик","labels":["ru","ru","ru","ru","ru"]}
+{"message_id":"school-test-robot","group_id":"school-test-robot","split":"test","text":"Робот снова завис на старте","labels":["ru","ru","ru","ru","ru"]}
+{"message_id":"school-test-committee","group_id":"school-test-committee","split":"test","text":"Щас классрук проверит список","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-test-exchange","group_id":"school-test-exchange","split":"test","text":"Стикерпак отправили без подписи","labels":["ru","ru","ru","ru"]}
+{"message_id":"school-test-cafeteria","group_id":"school-test-cafeteria","split":"test","text":"Асханаға позже барамыз","labels":["kk","ru","kk"]}
+{"message_id":"school-test-entrance","group_id":"school-test-entrance","split":"test","text":"Зайдите через қақпа","labels":["ru","ru","kk"]}
+{"message_id":"school-test-storage","group_id":"school-test-storage","split":"test","text":"Корапты осторожно ашындар","labels":["kk","ru","kk"]}
+{"message_id":"school-test-signup","group_id":"school-test-signup","split":"test","text":"Запись қазір уже открыта","labels":["ru","kk","ru","ru"]}
+{"message_id":"school-test-field","group_id":"school-test-field","split":"test","text":"Алаңға кіріңдер, тренер уже ждёт","labels":["kk","kk","ru","ru","ru"]}
+{"message_id":"school-test-drawing","group_id":"school-test-drawing","split":"test","text":"Көк қағаз жетпейді, возьми ещё лист","labels":["kk","kk","kk","ru","ru","ru"]}
+{"message_id":"school-test-ride","group_id":"school-test-ride","split":"test","text":"Автобус ушёл, біз осында қалдық","labels":["ru","ru","kk","kk","kk"]}
+{"message_id":"school-test-cleanup","group_id":"school-test-cleanup","split":"test","text":"Қоқысты шығарып таста, потом закрой дверь","labels":["kk","kk","kk","ru","ru","ru"]}

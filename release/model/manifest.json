@@ -1,6 +1,7 @@
 {
-  "metadata.json": "814ffe37faad75e0e4cedc46f368cd3702588aec5c43589744c9c2dc0dd10a30",
-  "policy.json": "687582a4199dc27e6a2574a20e5f971fedbd7121558a743ee3fad0543c3ae4b7",
+  "metadata.json": "abf24614b02a330e60ab3a97a5d94af1495e7e8d7ce10e301a42ea7bcbd29b6e",
+  "policy.json": "45a263a898465dbf924a2371db6a61ef7e80d6875f700e832b894381eff11cb7",
   "vocabulary.json": "9c6addad69409806d64f281c847c02263f669b2b954f4463219da46ab3b13410",
-  "weights.npz": "baa2df0d832955b1a336a3f1ae876e4dce63fb4b20e022b02cc84e09e10025b6"
+  "weights.npz": "baa2df0d832955b1a336a3f1ae876e4dce63fb4b20e022b02cc84e09e10025b6",
+  "word-evidence.json": "075693df50b694886b002aaad7ff86e1b3bd8d3ba2a8b41f3b95d1724c6f41f1"
 }

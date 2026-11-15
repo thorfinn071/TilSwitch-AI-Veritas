@@ -10,6 +10,7 @@ from .samples import EXAMPLES
 from .types import InputError
 
 CSS_PATH = Path(__file__).with_name("demo.css")
+JS_PATH = Path(__file__).with_name("demo.js")
 LANGUAGE_NAMES = {"kk": "Kazakh", "ru": "Russian", "en": "English", "unk": "Uncertain"}
 REASONS = {
     "short_word": "One-letter word",
@@ -18,6 +19,7 @@ REASONS = {
     "unseen_features": "Unfamiliar spelling",
     "script_mismatch": "Language and script disagree",
     "low_margin": "Close model scores",
+    "kazakh_ending": "Possible borrowing with a Kazakh ending",
 }
 EMPTY = (
     '<section class="analysis" aria-label="Language analysis">'
@@ -40,7 +42,7 @@ def render_result(result: dict) -> str:
         if token["label"] == "unk" and token["reason"] in REASONS
     }
     offset = 0
-    for segment in result["segments"]:
+    for number, segment in enumerate(result["segments"], start=1):
         start, end, label = segment["start"], segment["end"], segment["label"]
         content = _literal(raw[start:end])
         highlights.append(_literal(raw[offset:start]))
@@ -52,7 +54,10 @@ def render_result(result: dict) -> str:
         details = f"<small>{' · '.join(reasons)}</small>" if reasons else ""
         rows.append(
             f'<li><span class="language-key language-{label}">{LANGUAGE_NAMES[label]}</span>'
-            f'<span class="segment-content" lang="{label if label != "unk" else "und"}">{content}</span>'
+            f'<span class="segment-content" id="phrase-{number}" '
+            f'lang="{label if label != "unk" else "und"}">{content}</span>'
+            f'<button type="button" class="copy-phrase" aria-label="Copy {LANGUAGE_NAMES[label].lower()} phrase" '
+            f'aria-describedby="phrase-{number}">Copy</button>'
             f"{details}</li>"
         )
         offset = end
@@ -60,6 +65,8 @@ def render_result(result: dict) -> str:
     status = result["status"]
     if status == "mixed":
         title = "Mixed language evidence · review" if result["mixed_review_recommended"] else "Mixed languages"
+    elif status == "possible_switch":
+        title = "Possible switch"
     elif status == "single":
         title = f"{LANGUAGE_NAMES[result['primary_language']]} detected"
     elif status == "needs_review":
@@ -74,20 +81,25 @@ def render_result(result: dict) -> str:
             counts.append(f'<li class="language-key language-{language}">{name} <strong>{count}</strong></li>')
     legend = f'<ul class="language-counts" aria-label="Word counts">{"".join(counts)}</ul>' if counts else ""
     note = ""
+    if status == "possible_switch":
+        note = '<p class="analysis-note">The switch depends on a word with close language scores. Check the highlights.</p>'
     if result["has_unknown"]:
-        note = '<p class="analysis-note">Review uncertain words before using the result.</p>'
+        note += '<p class="analysis-note">Review uncertain words before using the result.</p>'
     groups = (
         '<div class="segment-section"><h3>Detected phrases</h3>'
-        f'<ul class="segments">{"".join(rows)}</ul></div>' if rows else ""
+        f'<ul class="segments">{"".join(rows)}</ul>'
+        '<p class="copy-status" role="status"></p></div>' if rows else ""
     )
     return (
         '<section class="analysis" aria-label="Language analysis">'
-        f'<div class="analysis-header"><h2>Language analysis</h2><p role="status">{title}</p></div>'
+        '<h2>Language analysis</h2>'
+        '<p class="analysis-note stale-result" role="status" hidden>Message changed. Analyze it again to see updated highlights.</p>'
+        f'<div class="analysis-content"><p class="analysis-status" role="status">{title}</p>'
         f'<p class="analysis-original" aria-label="Last analyzed message">{"".join(highlights)}</p>'
         f"{legend}{note}{groups}"
         f'<details class="model-details"><summary>About this result</summary>'
         f'<p>Model {escape(result["model_id"])}. Counts include uncertain words and exclude '
-        'punctuation, numbers and emojis.</p></details></section>'
+        'punctuation, numbers and emojis.</p></details></div></section>'
     )
 
 
@@ -129,23 +141,25 @@ def build_ui(model: Model | None):
     with gr.Blocks(title="TilSwitch AI", analytics_enabled=False) as app:
         with gr.Column(elem_id="workspace"):
             gr.HTML(intro, elem_id="page-intro", js_on_load=None)
-            with gr.Column(elem_id="composer"):
-                message = gr.Textbox(
-                    "", label="Message", placeholder="Paste a school or group-chat message",
-                    lines=3, max_lines=5, info="Up to 1,000 characters", elem_id="source-text",
-                )
-                error = gr.HTML(_error_markup(unavailable), elem_id="input-error", js_on_load=None)
-                with gr.Row(elem_id="actions"):
-                    submit = gr.Button("Analyze", variant="primary", scale=0, min_width=118,
-                                       interactive=model is not None)
-                    clear = gr.Button("Clear", variant="secondary", scale=0, min_width=80)
-                gr.HTML('<div class="example-label">Try an example</div>', js_on_load=None)
-                with gr.Row(elem_id="examples"):
-                    examples = [
-                        (gr.Button(label, variant="secondary", size="sm", scale=0, min_width=108), content)
-                        for label, content in EXAMPLES
-                    ]
-            result = gr.HTML(EMPTY, elem_id="analysis-result", js_on_load=None)
+            with gr.Row(elem_id="analysis-layout"):
+                with gr.Column(elem_id="composer", min_width=0):
+                    message = gr.Textbox(
+                        "", label="Message", placeholder="Paste a school or group-chat message",
+                        lines=3, max_lines=5, info="Up to 1,000 characters", elem_id="source-text",
+                    )
+                    error = gr.HTML(_error_markup(unavailable), elem_id="input-error", js_on_load=None)
+                    with gr.Row(elem_id="actions"):
+                        submit = gr.Button("Analyze", variant="primary", scale=0, min_width=118,
+                                           interactive=model is not None)
+                        clear = gr.Button("Clear", variant="secondary", scale=0, min_width=80)
+                    gr.HTML('<div class="example-label">Try an example</div>', js_on_load=None)
+                    with gr.Row(elem_id="examples"):
+                        examples = [
+                            (gr.Button(label, variant="secondary", size="sm", min_width=0), content)
+                            for label, content in EXAMPLES
+                        ]
+                result = gr.HTML(EMPTY, elem_id="analysis-result", min_width=0,
+                                 js_on_load=JS_PATH.read_text(encoding="utf-8"))
             gr.HTML(scope, elem_id="app-scope", js_on_load=None)
 
         request = submit.click(
@@ -155,7 +169,7 @@ def build_ui(model: Model | None):
         for button, example in examples:
             button.click(
                 partial(_reset, example, unavailable), outputs=[message, error, result],
-                queue=False, api_visibility="undocumented",
+                queue=False, cancels=[request], api_visibility="undocumented",
             )
         clear.click(
             partial(_reset, "", unavailable), outputs=[message, error, result], queue=False,

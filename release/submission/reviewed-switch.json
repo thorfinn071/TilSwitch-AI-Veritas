@@ -1,0 +1,166 @@
+{
+  "candidate_manifest_sha256": "d628e4fe4778161ab27d4ea424d63061d37ec9bdd0122828d19d1c88dc23a3aa",
+  "candidate_model_id": "word-recovery-c128f8d165-switch-486d1f967c",
+  "policies": {
+    "baseline": {
+      "mixed_review_recommended": true,
+      "review_kazakh_borrowings": true,
+      "singleton_switch_margin": 0.2,
+      "threshold": 0.1
+    },
+    "candidate": {
+      "mixed_review_recommended": true,
+      "review_kazakh_borrowings": true,
+      "singleton_switch_margin": 0.35,
+      "threshold": 0.1
+    }
+  },
+  "provenance": {
+    "annotations_sha256": "b8999bf8aba122f155a33400f3d8c6cef6c62eb08949540f4245ec21851dbc20",
+    "baseline_manifest_sha256": "ef4a9c31a9a7ecf724783b5c376d3e2af42b2150fe382b0dcf3f82bc8431c4bf",
+    "lock_sha256": "486d1f967c18b24c174edab3f0f9a90b66c9e7398cf5aa076671ee84b98c18a4",
+    "metrics_sha256": "3d09eb79a15ea7388be4c2905f1ba00e0b01f993482e1ec65015c4b65275c7eb"
+  },
+  "results": {
+    "alert_transitions": {
+      "indeterminate": {
+        "mixed_to_possible_switch": 1
+      },
+      "ru_only": {
+        "mixed_to_possible_switch": 2
+      }
+    },
+    "candidate_passed": true,
+    "checks": {
+      "fewer_false_mixed_alerts": true,
+      "genuine_mixed_alerts_preserved": true,
+      "one_word_switches_preserved": true
+    },
+    "lock_sha256": "486d1f967c18b24c174edab3f0f9a90b66c9e7398cf5aa076671ee84b98c18a4",
+    "messages": 60,
+    "policies": {
+      "baseline": {
+        "one_word_switches": {
+          "firm_mixed": 10,
+          "support": 10
+        },
+        "outcomes_by_case_type": {
+          "indeterminate": {
+            "mixed": 11,
+            "needs_review": 3
+          },
+          "kk_only": {
+            "kk": 4,
+            "possible_switch": 2
+          },
+          "mixed": {
+            "mixed": 10
+          },
+          "one_word_switch": {
+            "mixed": 10
+          },
+          "ru_only": {
+            "mixed": 4,
+            "needs_review": 1,
+            "ru": 15
+          }
+        },
+        "switch": {
+          "f1": 0.9090909090909091,
+          "false_negative": 0,
+          "false_positive": 4,
+          "indeterminate_or_neutral": 14,
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "resolved": 46,
+          "review_outcomes": 3,
+          "true_negative": 22,
+          "true_positive": 20
+        }
+      },
+      "candidate": {
+        "one_word_switches": {
+          "firm_mixed": 10,
+          "support": 10
+        },
+        "outcomes_by_case_type": {
+          "indeterminate": {
+            "mixed": 10,
+            "needs_review": 3,
+            "possible_switch": 1
+          },
+          "kk_only": {
+            "kk": 4,
+            "possible_switch": 2
+          },
+          "mixed": {
+            "mixed": 10
+          },
+          "one_word_switch": {
+            "mixed": 10
+          },
+          "ru_only": {
+            "mixed": 2,
+            "needs_review": 1,
+            "possible_switch": 2,
+            "ru": 15
+          }
+        },
+        "switch": {
+          "f1": 0.9523809523809523,
+          "false_negative": 0,
+          "false_positive": 2,
+          "indeterminate_or_neutral": 14,
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "resolved": 46,
+          "review_outcomes": 5,
+          "true_negative": 24,
+          "true_positive": 20
+        }
+      }
+    },
+    "word_metrics": {
+      "accepted": 507,
+      "accepted_error": 0.015779092702169626,
+      "accuracy": 0.9803536345776032,
+      "confusion": {
+        "kk": {
+          "en": 0,
+          "kk": 225,
+          "neutral": 0,
+          "ru": 3,
+          "unk": 0
+        },
+        "ru": {
+          "en": 0,
+          "kk": 5,
+          "neutral": 0,
+          "ru": 274,
+          "unk": 2
+        }
+      },
+      "coverage": 0.9960707269155207,
+      "macro_f1": 0.9823058020691491,
+      "per_label": {
+        "kk": {
+          "correct": 225,
+          "f1": 0.982532751091703,
+          "precision": 0.9782608695652174,
+          "predicted": 230,
+          "recall": 0.9868421052631579,
+          "support": 228
+        },
+        "ru": {
+          "correct": 274,
+          "f1": 0.982078853046595,
+          "precision": 0.9891696750902527,
+          "predicted": 277,
+          "recall": 0.9750889679715302,
+          "support": 281
+        }
+      },
+      "units": 509
+    }
+  }
+}

@@ -21,8 +21,9 @@
   "iterations": 32,
   "max_iterations": 400,
   "mode": "word",
-  "model_id": "word-abf81e3da4",
+  "model_id": "word-recovery-c128f8d165",
   "neighbor_weight": 0.35,
+  "review_policy_evidence_sha256": "b214ff89d29db6b279560c17678815a983edc458d452c094a96af5b8dfa7aefd",
   "schema_version": 1,
   "split_seed": 1729,
   "train_sha256": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662",
@@ -31,5 +32,7 @@
     "kk": 11501,
     "ru": 10243
   },
-  "vocabulary_size": 24274
+  "vocabulary_size": 24274,
+  "word_recovery_evidence_sha256": "0a00c52e161b2808cfb708e155a7bafdac734a2a7d0a598588168c7e7952c26d",
+  "word_recovery_lock_sha256": "49d93daa161a4cd651e78377cea6585ba07ce44abd7abae466f07ee8b62b67eb"
 }

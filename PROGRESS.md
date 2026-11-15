@@ -1,6 +1,6 @@
 # TilSwitch AI progress
 
-**Current milestone** KRCS evaluation complete. The word-only bundle uses the uncertainty threshold selected on KRCS development data.
+**Current milestone** The 0.35 Mixed-alert submission bundle is staged in `release/submission/model` with its aggregate evidence and a verification command. The public fallback is the original locked release at `988119e`. The entrant owns publication and confirmation. [Write-up and quickstart](README.md) · [Submission handoff](docs/HACKATHON_SUBMISSION.md)
 
 **Workspace at intake** Empty Git repository with no commits and no project or ancestor AGENTS.md found. The request was a separate text attachment. The official brief was obtained from the organizer website.
 
@@ -29,3 +29,13 @@
 | T14–T16 submission and optional work | Ready for entrant | The designated entrant owns the submission and receipt. The optional video is deferred. [Official form](https://airtable.com/appypCyHN77hElIcS/shrXA5VBFdugmoXl6) |
 
 The KRCS run was locked and scored on Sunday, Nov 15, Kazakhstan time (UTC+5). The first receipt target is Monday, Nov 16, at 00:30 and the organizer deadline is Monday at 09:59 (UTC+5). [Frozen KRCS lock](release/evidence/krcs-v1.lock.json) · [Official submission instructions](https://highschoolhackathon.org/briefs)
+
+On the local experiment branch, [informal Kazakh augmentation](experiments/README.md) improved word scores on development and scripted cases. It still produced five false mixed flags on the KRCS replay and lost one genuine one-word switch. The local release uses the original trained weights and an updated review policy.
+
+The updated policy moved five of 87 firm mixed flags on single-language references to **Possible switch** in the 461-message KazNLP holdout. Both runs detected 159 of 161 clause-level mixed messages. The KRCS replay reduced firm false mixed flags from five to four of seven and retained 15 of 17 one-word switches. [Results and limits](docs/RESULTS.md#updated-switch-and-borrowing-policy-nov-15-2026)
+
+All 33 tests passed in a clean package snapshot. The policy evidence reproduced, the wheel contained both browser assets, and Chrome verified the offline workflow, Copy, clipboard fallback, stale-result handling and responsive layout at 360–1280 px. The captioned clip is at `artifacts/demo-preview/tilswitch-demo.mp4` and runs 69 seconds. A student pilot and public release update are pending.
+
+The local bundle now recognizes more spellings with distinctive Kazakh letters omitted and can put common one-letter words into a supported phrase. On the frozen FLORES-derived test, correct informal Kazakh labels rose from 841 to 941 of 1,200. The reviewed KRCS replay detected 16 of 17 genuine one-word switches and still flagged four of seven Kazakh-only messages as mixed. [Word-recovery results](docs/RESULTS.md#informal-spellings-and-short-words-nov-15-2026)
+
+The updated bundle and evaluation reproduced byte-for-byte for the inference assets, all 35 tests and 500 Unicode offset checks passed, and Chrome verified the full Russian phrase copy and the **Informal Kazakh** example. The refreshed 69-second clip is at `artifacts/word-recovery-demo/tilswitch-demo.mp4`. The public update and student pilot are pending.

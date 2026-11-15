@@ -37,6 +37,7 @@ def _commands() -> argparse.ArgumentParser:
     train = commands.add_parser("train", help="Fit and save a CPU model")
     _configuration(train)
     train.add_argument("--model", choices=("word", "context"), required=True)
+    train.add_argument("--informal", action="store_true", help="Add scripted Kazakh spellings and loan inflections")
 
     lock = commands.add_parser("lock", help="Lock model choices and held-out digests")
     _configuration(lock)
@@ -88,7 +89,7 @@ def _run(args):
         return {"path": str(path), **receipt}
     if command == "train":
         from .train import train
-        path, receipt = train(cfg, args.model)
+        path, receipt = train(cfg, args.model, informal=args.informal)
         return {"path": str(path), **receipt}
     if command == "lock":
         from .evaluate import create_lock

@@ -1,0 +1,417 @@
+{
+  "baseline_bundle": "3b4121a7da71abf6c4328a4d0b98e9869bbdfe2a41520e018d15f06a76e10da1",
+  "code_sha256": {
+    "tilswitch/infer.py": "aba2522f1b5a87efa5b87e709631e0116c9572d3c990034d59703e5bc5f91a28",
+    "tilswitch/text.py": "82c7609981e965ab779171ed155225fe4f32cb5f9c80e3a7b9c0aacc0919910b"
+  },
+  "fixtures_sha256": "cb73dd61c596a7032670040b1fed67520367e06b35349064e0390f547bb0e300",
+  "inference_policy": {
+    "mixed_review_recommended": true,
+    "review_kazakh_borrowings": true,
+    "singleton_switch_margin": 0.2,
+    "threshold": 0.1
+  },
+  "label_scope": "Authors’ document labels use a clause-level mixed definition. KRCS is a previously scored word-labeled replay; the school challenge fixtures are AI-authored.",
+  "policy_lock_sha256": "c57d53dcba17437df2663c3161bfd4186e4b8e29789bb368264f90d5b1a608a8",
+  "results": {
+    "development": {
+      "authored": {
+        "release_v1": {
+          "accepted": 41,
+          "coverage": 0.8723404255319149,
+          "macro_f1": 0.9083333333333333,
+          "switch": {
+            "f1": 0.9230769230769231,
+            "false_negative": 0,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 5,
+            "true_negative": 5,
+            "true_positive": 6
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 3,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 47
+        },
+        "selected_review_policy": {
+          "accepted": 41,
+          "coverage": 0.8723404255319149,
+          "macro_f1": 0.9083333333333333,
+          "switch": {
+            "f1": 0.9230769230769231,
+            "false_negative": 0,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 5,
+            "true_negative": 5,
+            "true_positive": 6
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 3,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 47
+        }
+      },
+      "baseline_manifest": "3b4121a7da71abf6c4328a4d0b98e9869bbdfe2a41520e018d15f06a76e10da1",
+      "external": {
+        "release_v1": {
+          "all": {
+            "kz": {
+              "kk": 74,
+              "mixed": 63,
+              "needs_review": 13
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 160,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 44,
+              "needs_review": 73,
+              "ru": 33
+            }
+          },
+          "messages_with_borrowing_review": {},
+          "short": {
+            "kz": {
+              "kk": 59,
+              "mixed": 41,
+              "needs_review": 9
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 18,
+              "needs_review": 47,
+              "ru": 31
+            }
+          }
+        },
+        "selected_review_policy": {
+          "all": {
+            "kz": {
+              "kk": 74,
+              "mixed": 57,
+              "needs_review": 13,
+              "possible_switch": 6
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 160,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 42,
+              "needs_review": 73,
+              "possible_switch": 2,
+              "ru": 33
+            }
+          },
+          "messages_with_borrowing_review": {
+            "mixed": 1
+          },
+          "short": {
+            "kz": {
+              "kk": 59,
+              "mixed": 36,
+              "needs_review": 9,
+              "possible_switch": 5
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 17,
+              "needs_review": 47,
+              "possible_switch": 1,
+              "ru": 31
+            }
+          }
+        }
+      },
+      "external_filter": {
+        "duplicates": 0,
+        "invalid": 0,
+        "source_rows": 462
+      },
+      "inference_sha256": "aba2522f1b5a87efa5b87e709631e0116c9572d3c990034d59703e5bc5f91a28",
+      "kaznlp_sha256": "372329d0719c1db71487f1e41d0ba4ebbae2fc9a99151690bbc6e0e5e34a936b",
+      "kaznlp_split": "val",
+      "krcs_local": {
+        "release_v1": {
+          "accepted": 76,
+          "coverage": 0.9382716049382716,
+          "macro_f1": 0.8155844155844156,
+          "switch": {
+            "f1": 0.8,
+            "false_negative": 1,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.7272727272727273,
+            "recall": 0.8888888888888888,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 8
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 2,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 81
+        },
+        "selected_review_policy": {
+          "accepted": 76,
+          "coverage": 0.9382716049382716,
+          "macro_f1": 0.8155844155844156,
+          "switch": {
+            "f1": 0.8,
+            "false_negative": 1,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.7272727272727273,
+            "recall": 0.8888888888888888,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 8
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 2,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 81
+        }
+      },
+      "krcs_sha256": "398fa041083bcc1d69eb789e33e23df73754c060ba3c87dc4e9a07b5c8d73ec9",
+      "policy_lock_sha256": "c57d53dcba17437df2663c3161bfd4186e4b8e29789bb368264f90d5b1a608a8"
+    },
+    "test": {
+      "authored": {
+        "release_v1": {
+          "accepted": 79,
+          "coverage": 0.9294117647058824,
+          "macro_f1": 0.9029761904761905,
+          "switch": {
+            "f1": 0.8,
+            "false_negative": 0,
+            "false_positive": 4,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "resolved": 20,
+            "review_outcomes": 4,
+            "true_negative": 8,
+            "true_positive": 8
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 4,
+            "one_word_possible": 0,
+            "one_word_support": 4,
+            "single_as_possible": 0
+          },
+          "units": 85
+        },
+        "selected_review_policy": {
+          "accepted": 78,
+          "coverage": 0.9176470588235294,
+          "macro_f1": 0.9082831325301205,
+          "switch": {
+            "f1": 0.8888888888888888,
+            "false_negative": 0,
+            "false_positive": 2,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "resolved": 20,
+            "review_outcomes": 6,
+            "true_negative": 10,
+            "true_positive": 8
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 4,
+            "one_word_possible": 0,
+            "one_word_support": 4,
+            "single_as_possible": 1
+          },
+          "units": 85
+        }
+      },
+      "baseline_manifest": "3b4121a7da71abf6c4328a4d0b98e9869bbdfe2a41520e018d15f06a76e10da1",
+      "external": {
+        "release_v1": {
+          "all": {
+            "kz": {
+              "kk": 90,
+              "mixed": 49,
+              "needs_review": 11
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 159,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 38,
+              "needs_review": 72,
+              "ru": 40
+            }
+          },
+          "messages_with_borrowing_review": {},
+          "short": {
+            "kz": {
+              "kk": 79,
+              "mixed": 33,
+              "needs_review": 8
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 16,
+              "needs_review": 43,
+              "ru": 35
+            }
+          }
+        },
+        "selected_review_policy": {
+          "all": {
+            "kz": {
+              "kk": 90,
+              "mixed": 47,
+              "needs_review": 11,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 159,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 35,
+              "needs_review": 72,
+              "possible_switch": 3,
+              "ru": 40
+            }
+          },
+          "messages_with_borrowing_review": {},
+          "short": {
+            "kz": {
+              "kk": 79,
+              "mixed": 31,
+              "needs_review": 8,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 15,
+              "needs_review": 43,
+              "possible_switch": 1,
+              "ru": 35
+            }
+          }
+        }
+      },
+      "external_filter": {
+        "duplicates": 0,
+        "invalid": 0,
+        "source_rows": 461
+      },
+      "inference_sha256": "aba2522f1b5a87efa5b87e709631e0116c9572d3c990034d59703e5bc5f91a28",
+      "kaznlp_sha256": "4d640b68360009e40a8a6ad902ee60d1ed0575c0da27850063fb8e151d1c004f",
+      "kaznlp_split": "test",
+      "krcs_local": {
+        "release_v1": {
+          "accepted": 245,
+          "coverage": 0.9722222222222222,
+          "macro_f1": 0.8973236009732359,
+          "switch": {
+            "f1": 0.8666666666666667,
+            "false_negative": 3,
+            "false_positive": 5,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8387096774193549,
+            "recall": 0.896551724137931,
+            "resolved": 36,
+            "review_outcomes": 3,
+            "true_negative": 2,
+            "true_positive": 26
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 15,
+            "one_word_possible": 0,
+            "one_word_support": 17,
+            "single_as_possible": 0
+          },
+          "units": 252
+        },
+        "selected_review_policy": {
+          "accepted": 243,
+          "coverage": 0.9642857142857143,
+          "macro_f1": 0.9037037037037037,
+          "switch": {
+            "f1": 0.8813559322033898,
+            "false_negative": 3,
+            "false_positive": 4,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8666666666666667,
+            "recall": 0.896551724137931,
+            "resolved": 36,
+            "review_outcomes": 4,
+            "true_negative": 3,
+            "true_positive": 26
+          },
+          "switch_details": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 15,
+            "one_word_possible": 0,
+            "one_word_support": 17,
+            "single_as_possible": 0
+          },
+          "units": 252
+        }
+      },
+      "krcs_sha256": "ff31d668b65ca2ad2b0f2da556af4223afb2714fe39870dff03a64ca54fbebe0",
+      "policy_lock_sha256": "c57d53dcba17437df2663c3161bfd4186e4b8e29789bb368264f90d5b1a608a8"
+    }
+  },
+  "revision": "f5d5be8108179aded06e145ad6eb019489f207e4",
+  "selection": "Among development comparisons for margins 0, 0.20, 0.35, 0.45, 0.50, 0.60, 0.70 and 0.80, choose the margin that removes the most publication-label false mixed flags while preserving the detection counts for KazNLP clause-level mixed, KRCS development and scripted development, including one-word events in the latter two. The borrowing review uses the release weights.",
+  "source": "https://github.com/naadgob/KazNLP/tree/f5d5be8108179aded06e145ad6eb019489f207e4/data/training/filter/v1"
+}

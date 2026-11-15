@@ -1,0 +1,639 @@
+{
+  "development": {
+    "flores_groups": 100,
+    "gate": {
+      "document_clause_switches_preserved": true,
+      "document_russian_false_flags_preserved": true,
+      "reviewed_coverage_preserved": true,
+      "reviewed_false_flags_preserved": true,
+      "reviewed_one_word_switches_preserved": true,
+      "reviewed_switches_preserved": true,
+      "reviewed_word_f1_preserved": true,
+      "russian_and_english_words_preserved": true,
+      "synthetic_insertions_preserved": true,
+      "unaccented_words_improved": true
+    },
+    "lock_sha256": "1be738122a4780d36b55a412b8b7c07e130aeb954c48a6b700ef45151a9cbdc4",
+    "phase": "lock",
+    "scores": {
+      "candidate": {
+        "flores": {
+          "english": {
+            "assigned": 595,
+            "correct": 595,
+            "firm_mixed": 0,
+            "messages": 100,
+            "words": 600
+          },
+          "kk_with_ru": {
+            "assigned": 688,
+            "correct": 652,
+            "firm_mixed": 95,
+            "insertion_correct": 93,
+            "messages": 100,
+            "words": 700
+          },
+          "ru_with_kk": {
+            "assigned": 671,
+            "correct": 650,
+            "firm_mixed": 96,
+            "insertion_correct": 96,
+            "messages": 100,
+            "words": 700
+          },
+          "russian": {
+            "assigned": 576,
+            "correct": 558,
+            "firm_mixed": 13,
+            "messages": 100,
+            "words": 600
+          },
+          "standard_kk": {
+            "assigned": 591,
+            "correct": 559,
+            "firm_mixed": 24,
+            "messages": 100,
+            "words": 600
+          },
+          "unaccented_kk": {
+            "assigned": 569,
+            "correct": 443,
+            "firm_mixed": 63,
+            "messages": 100,
+            "words": 600
+          }
+        },
+        "kaznlp": {
+          "all": {
+            "kz": {
+              "kk": 75,
+              "mixed": 56,
+              "needs_review": 12,
+              "possible_switch": 6,
+              "ru": 1
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 161
+            },
+            "ru": {
+              "mixed": 42,
+              "needs_review": 25,
+              "possible_switch": 2,
+              "ru": 81
+            }
+          },
+          "messages_with_borrowing_review": {
+            "mixed": 1
+          },
+          "short": {
+            "kz": {
+              "kk": 60,
+              "mixed": 35,
+              "needs_review": 8,
+              "possible_switch": 5,
+              "ru": 1
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 121
+            },
+            "ru": {
+              "mixed": 17,
+              "needs_review": 14,
+              "possible_switch": 1,
+              "ru": 64
+            }
+          }
+        },
+        "krcs": {
+          "accepted": 78,
+          "accepted_error": 0.14102564102564102,
+          "coverage": 0.9629629629629629,
+          "macro_f1": 0.8432055749128919,
+          "messages": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 9
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 3,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 81
+        },
+        "scripted": {
+          "accepted": 43,
+          "accepted_error": 0.0,
+          "coverage": 0.9148936170212766,
+          "macro_f1": 0.9532105525136885,
+          "messages": {
+            "f1": 1.0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "indeterminate_or_neutral": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 6,
+            "true_positive": 6
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 3,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 47
+        }
+      },
+      "prior": {
+        "flores": {
+          "english": {
+            "assigned": 581,
+            "correct": 581,
+            "firm_mixed": 0,
+            "messages": 100,
+            "words": 600
+          },
+          "kk_with_ru": {
+            "assigned": 688,
+            "correct": 652,
+            "firm_mixed": 95,
+            "insertion_correct": 93,
+            "messages": 100,
+            "words": 700
+          },
+          "ru_with_kk": {
+            "assigned": 623,
+            "correct": 603,
+            "firm_mixed": 96,
+            "insertion_correct": 96,
+            "messages": 100,
+            "words": 700
+          },
+          "russian": {
+            "assigned": 525,
+            "correct": 507,
+            "firm_mixed": 13,
+            "messages": 100,
+            "words": 600
+          },
+          "standard_kk": {
+            "assigned": 590,
+            "correct": 559,
+            "firm_mixed": 24,
+            "messages": 100,
+            "words": 600
+          },
+          "unaccented_kk": {
+            "assigned": 561,
+            "correct": 377,
+            "firm_mixed": 83,
+            "messages": 100,
+            "words": 600
+          }
+        },
+        "kaznlp": {
+          "all": {
+            "kz": {
+              "kk": 74,
+              "mixed": 57,
+              "needs_review": 13,
+              "possible_switch": 6
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 160,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 42,
+              "needs_review": 73,
+              "possible_switch": 2,
+              "ru": 33
+            }
+          },
+          "messages_with_borrowing_review": {
+            "mixed": 1
+          },
+          "short": {
+            "kz": {
+              "kk": 59,
+              "mixed": 36,
+              "needs_review": 9,
+              "possible_switch": 5
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 17,
+              "needs_review": 47,
+              "possible_switch": 1,
+              "ru": 31
+            }
+          }
+        },
+        "krcs": {
+          "accepted": 76,
+          "accepted_error": 0.15789473684210525,
+          "coverage": 0.9382716049382716,
+          "macro_f1": 0.8155844155844156,
+          "messages": {
+            "f1": 0.8,
+            "false_negative": 1,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.7272727272727273,
+            "recall": 0.8888888888888888,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 8
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 2,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 81
+        },
+        "scripted": {
+          "accepted": 41,
+          "accepted_error": 0.024390243902439025,
+          "coverage": 0.8723404255319149,
+          "macro_f1": 0.9083333333333333,
+          "messages": {
+            "f1": 0.9230769230769231,
+            "false_negative": 0,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8571428571428571,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 5,
+            "true_negative": 5,
+            "true_positive": 6
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 3,
+            "one_word_possible": 0,
+            "one_word_support": 3,
+            "single_as_possible": 0
+          },
+          "units": 47
+        }
+      }
+    }
+  },
+  "lock": {
+    "baseline_manifest_sha256": "3b4121a7da71abf6c4328a4d0b98e9869bbdfe2a41520e018d15f06a76e10da1",
+    "case_sha256": {
+      "dev": "2ffc4eb4b70f13ab9e470c66d2e4785a0cdfcd2f7729839c8a004a8cba04e65b",
+      "devtest": "4ef22984a4ab05a77709ee406086a73f59dbcd3138feb5170e2f1ab864333a4a"
+    },
+    "code_sha256": {
+      "experiments/word_recovery.py": "9eb23d236ffcff0d567c9471041efc0443402617f2530a45c0e64b85279415d1",
+      "tilswitch/infer.py": "062af304819eaeafa2f36bb3ea39c46399fc283d83a7cf88db140b1caace828b",
+      "tilswitch/text.py": "0e2c1eb5ed72e28379367e06239e6679b664fb3d10a900a43d53e484822c49ee",
+      "tilswitch/word_evidence.py": "7640f943ce89b53db1474aba38b43d986f6199b119e8058012683befd123cf0f"
+    },
+    "flores_sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "kaznlp_replay_sha256": "4d640b68360009e40a8a6ad902ee60d1ed0575c0da27850063fb8e151d1c004f",
+    "krcs_sha256": "9f4eb200f0c52188bdd39aea33bf4d44a7da81f00eb5f00a98aa807da80ccc6d",
+    "policy": {
+      "mixed_review_recommended": true,
+      "review_kazakh_borrowings": true,
+      "singleton_switch_margin": 0.2,
+      "threshold": 0.1
+    },
+    "reviewed_replay_sha256": "ff31d668b65ca2ad2b0f2da556af4223afb2714fe39870dff03a64ca54fbebe0",
+    "school_fixtures_sha256": "cb73dd61c596a7032670040b1fed67520367e06b35349064e0390f547bb0e300",
+    "training_sha256": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662",
+    "word_evidence_sha256": "c128f8d1652bcc9944fded788218de8b34018d5cb6fe96e2db603859bd202b76",
+    "word_evidence_support": {
+      "eligible_folded_spellings": 1233,
+      "parallel_groups_with_weak_kazakh_labels": 558,
+      "parallel_spellings": 79
+    }
+  },
+  "test": {
+    "flores_groups": 200,
+    "gate": {
+      "document_clause_switches_preserved": true,
+      "document_russian_false_flags_preserved": true,
+      "reviewed_coverage_preserved": true,
+      "reviewed_false_flags_preserved": true,
+      "reviewed_one_word_switches_preserved": true,
+      "reviewed_switches_preserved": true,
+      "reviewed_word_f1_preserved": true,
+      "russian_and_english_words_preserved": true,
+      "synthetic_insertions_preserved": true,
+      "unaccented_words_improved": true
+    },
+    "lock_sha256": "1be738122a4780d36b55a412b8b7c07e130aeb954c48a6b700ef45151a9cbdc4",
+    "phase": "score",
+    "scores": {
+      "candidate": {
+        "flores": {
+          "english": {
+            "assigned": 1192,
+            "correct": 1192,
+            "firm_mixed": 0,
+            "messages": 200,
+            "words": 1200
+          },
+          "kk_with_ru": {
+            "assigned": 1380,
+            "correct": 1323,
+            "firm_mixed": 191,
+            "insertion_correct": 189,
+            "messages": 200,
+            "words": 1400
+          },
+          "ru_with_kk": {
+            "assigned": 1335,
+            "correct": 1310,
+            "firm_mixed": 193,
+            "insertion_correct": 194,
+            "messages": 200,
+            "words": 1400
+          },
+          "russian": {
+            "assigned": 1154,
+            "correct": 1132,
+            "firm_mixed": 16,
+            "messages": 200,
+            "words": 1200
+          },
+          "standard_kk": {
+            "assigned": 1184,
+            "correct": 1134,
+            "firm_mixed": 40,
+            "messages": 200,
+            "words": 1200
+          },
+          "unaccented_kk": {
+            "assigned": 1150,
+            "correct": 941,
+            "firm_mixed": 124,
+            "messages": 200,
+            "words": 1200
+          }
+        },
+        "kaznlp": {
+          "all": {
+            "kz": {
+              "kk": 90,
+              "mixed": 47,
+              "needs_review": 11,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 159,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 35,
+              "needs_review": 25,
+              "possible_switch": 3,
+              "ru": 87
+            }
+          },
+          "messages_with_borrowing_review": {},
+          "short": {
+            "kz": {
+              "kk": 79,
+              "mixed": 31,
+              "needs_review": 8,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 15,
+              "needs_review": 13,
+              "possible_switch": 1,
+              "ru": 65
+            }
+          }
+        },
+        "krcs": {
+          "accepted": 244,
+          "accepted_error": 0.05327868852459016,
+          "coverage": 0.9682539682539683,
+          "macro_f1": 0.9222021997141614,
+          "messages": {
+            "f1": 0.9,
+            "false_negative": 2,
+            "false_positive": 4,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8709677419354839,
+            "recall": 0.9310344827586207,
+            "resolved": 36,
+            "review_outcomes": 4,
+            "true_negative": 3,
+            "true_positive": 27
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 16,
+            "one_word_possible": 0,
+            "one_word_support": 17,
+            "single_as_possible": 0
+          },
+          "units": 252
+        },
+        "scripted": {
+          "accepted": 80,
+          "accepted_error": 0.025,
+          "coverage": 0.9411764705882353,
+          "macro_f1": 0.9454892741698502,
+          "messages": {
+            "f1": 0.9411764705882353,
+            "false_negative": 0,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "resolved": 20,
+            "review_outcomes": 5,
+            "true_negative": 11,
+            "true_positive": 8
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 4,
+            "one_word_possible": 0,
+            "one_word_support": 4,
+            "single_as_possible": 1
+          },
+          "units": 85
+        }
+      },
+      "prior": {
+        "flores": {
+          "english": {
+            "assigned": 1165,
+            "correct": 1165,
+            "firm_mixed": 0,
+            "messages": 200,
+            "words": 1200
+          },
+          "kk_with_ru": {
+            "assigned": 1380,
+            "correct": 1323,
+            "firm_mixed": 191,
+            "insertion_correct": 189,
+            "messages": 200,
+            "words": 1400
+          },
+          "ru_with_kk": {
+            "assigned": 1252,
+            "correct": 1227,
+            "firm_mixed": 193,
+            "insertion_correct": 194,
+            "messages": 200,
+            "words": 1400
+          },
+          "russian": {
+            "assigned": 1055,
+            "correct": 1033,
+            "firm_mixed": 16,
+            "messages": 200,
+            "words": 1200
+          },
+          "standard_kk": {
+            "assigned": 1184,
+            "correct": 1134,
+            "firm_mixed": 40,
+            "messages": 200,
+            "words": 1200
+          },
+          "unaccented_kk": {
+            "assigned": 1136,
+            "correct": 841,
+            "firm_mixed": 162,
+            "messages": 200,
+            "words": 1200
+          }
+        },
+        "kaznlp": {
+          "all": {
+            "kz": {
+              "kk": 90,
+              "mixed": 47,
+              "needs_review": 11,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 159,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 35,
+              "needs_review": 72,
+              "possible_switch": 3,
+              "ru": 40
+            }
+          },
+          "messages_with_borrowing_review": {},
+          "short": {
+            "kz": {
+              "kk": 79,
+              "mixed": 31,
+              "needs_review": 8,
+              "possible_switch": 2
+            },
+            "mixed": {
+              "kk": 1,
+              "mixed": 120,
+              "needs_review": 1
+            },
+            "ru": {
+              "mixed": 15,
+              "needs_review": 43,
+              "possible_switch": 1,
+              "ru": 35
+            }
+          }
+        },
+        "krcs": {
+          "accepted": 243,
+          "accepted_error": 0.06584362139917696,
+          "coverage": 0.9642857142857143,
+          "macro_f1": 0.9037037037037037,
+          "messages": {
+            "f1": 0.8813559322033898,
+            "false_negative": 3,
+            "false_positive": 4,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8666666666666667,
+            "recall": 0.896551724137931,
+            "resolved": 36,
+            "review_outcomes": 4,
+            "true_negative": 3,
+            "true_positive": 26
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 15,
+            "one_word_possible": 0,
+            "one_word_support": 17,
+            "single_as_possible": 0
+          },
+          "units": 252
+        },
+        "scripted": {
+          "accepted": 78,
+          "accepted_error": 0.05128205128205128,
+          "coverage": 0.9176470588235294,
+          "macro_f1": 0.9082831325301205,
+          "messages": {
+            "f1": 0.8888888888888888,
+            "false_negative": 0,
+            "false_positive": 2,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "resolved": 20,
+            "review_outcomes": 6,
+            "true_negative": 10,
+            "true_positive": 8
+          },
+          "one_word": {
+            "mixed_as_possible": 0,
+            "one_word_mixed": 4,
+            "one_word_possible": 0,
+            "one_word_support": 4,
+            "single_as_possible": 1
+          },
+          "units": 85
+        }
+      }
+    }
+  }
+}

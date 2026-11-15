@@ -1,0 +1,44 @@
+{
+  "classes": [
+    "en",
+    "kk",
+    "ru"
+  ],
+  "environment": {
+    "libraries": {
+      "numpy": "2.2.6",
+      "regex": "2025.9.18",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.15.3",
+      "threadpoolctl": "3.6.0"
+    },
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python": "3.11.9"
+  },
+  "evaluation_lock_sha256": "1455d555c2e552c9fd973838370b5912b44c0b565c8081b02024cfc636e50f5e",
+  "features": 24274,
+  "fit_seconds": 2.465,
+  "iterations": 32,
+  "max_iterations": 400,
+  "mode": "word",
+  "model_id": "word-recovery-c128f8d165-switch-486d1f967c",
+  "neighbor_weight": 0.35,
+  "review_policy_evidence_sha256": "b214ff89d29db6b279560c17678815a983edc458d452c094a96af5b8dfa7aefd",
+  "schema_version": 1,
+  "split_seed": 1729,
+  "switch_comparison": {
+    "annotations_sha256": "b8999bf8aba122f155a33400f3d8c6cef6c62eb08949540f4245ec21851dbc20",
+    "baseline_manifest_sha256": "ef4a9c31a9a7ecf724783b5c376d3e2af42b2150fe382b0dcf3f82bc8431c4bf",
+    "lock_sha256": "486d1f967c18b24c174edab3f0f9a90b66c9e7398cf5aa076671ee84b98c18a4",
+    "metrics_sha256": "3d09eb79a15ea7388be4c2905f1ba00e0b01f993482e1ec65015c4b65275c7eb"
+  },
+  "train_sha256": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662",
+  "training_word_counts": {
+    "en": 14066,
+    "kk": 11501,
+    "ru": 10243
+  },
+  "vocabulary_size": 24274,
+  "word_recovery_evidence_sha256": "0a00c52e161b2808cfb708e155a7bafdac734a2a7d0a598588168c7e7952c26d",
+  "word_recovery_lock_sha256": "49d93daa161a4cd651e78377cea6585ba07ce44abd7abae466f07ee8b62b67eb"
+}

@@ -101,7 +101,7 @@ def _switch_scores(rows):
     return {"true_positive": tp, "false_positive": fp, "false_negative": fn, "true_negative": tn,
             "precision": precision, "recall": recall,
             "f1": _ratio(2 * tp, 2 * tp + fp + fn) if tp + fn and fp + tn else None,
-            "review_outcomes": sum(row["outcome"] == "needs_review" for row in resolved),
+            "review_outcomes": sum(row["outcome"] in {"needs_review", "possible_switch"} for row in resolved),
             "resolved": len(resolved), "indeterminate_or_neutral": len(rows) - len(resolved)}
 
 
@@ -141,10 +141,13 @@ def summarize(rows: list[dict], reviewed: bool) -> dict:
             "matched": sum(all(token["gold"] == token["label"] for token in row) for row in lexical_resolved),
         }
     else:
+        outcomes = MONO_OUTCOMES
+        if any(row["outcome"] == "possible_switch" for row in rows):
+            outcomes = (*outcomes, "possible_switch")
         summary["sentence_outcomes"] = classify_metrics(((row["gold_message"], row["outcome"]) for row in rows),
-                                                       LANGUAGES, MONO_OUTCOMES)
+                                                       LANGUAGES, outcomes)
         summary["short_sentence_outcomes"] = classify_metrics(
-            ((row["gold_message"], row["outcome"]) for row in short), LANGUAGES, MONO_OUTCOMES
+            ((row["gold_message"], row["outcome"]) for row in short), LANGUAGES, outcomes
         )
     return summary
 

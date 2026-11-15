@@ -13,18 +13,18 @@
 
 ## Interaction and page layout
 
-1. Open a single page with the product name, one sentence of scope and a labeled message box. Place two or three example buttons below the field. A button copies its authored example into the box and clears any stale result.
+1. Open a single page with the product name, one sentence of scope and a labeled message box. Five buttons load authored examples and clear any stale result.
 2. Paste a message of at most 1,000 Python Unicode code points. Press **Analyze** using mouse, touch or keyboard. Keep multiline input as typed. Provide a **Clear** control.
-3. Show the original text with language highlighting, followed by a small status summary and a numbered segment list in source order. Each row includes the readable language, the text and a review label if needed. A student can select and copy a specific phrase with native text selection. A separate clipboard control is optional.
-4. Show **Mixed languages** or **Mixed language evidence · review** according to the locked validation policy. Other status labels are **One language detected**, **Needs review** and **No words to analyze**. Include counts and the detected share of words, with the denominator explained. Show **Review uncertain words before using the result** when unknown word evidence is present. A one-sentence scope note covers Cyrillic Kazakh and Russian, English, and uncertainty on names or romanization.
+3. Show the original text with language highlighting and list the phrases in source order. Each row identifies the language, shows any review reason and offers **Copy**. If clipboard access is denied, select the phrase and tell the student how to copy it.
+4. Show **Mixed language evidence · review**, **Possible switch**, **Needs review**, the detected single language, or **No words to analyze**. Include word counts and show the reason when a word needs review. A scope note covers Cyrillic Kazakh and Russian, English, and uncertainty on names or romanization.
 5. Offer a short expandable explanation for judges with actual model version, counted known and uncertain words and a link to the published evaluation, if available. The page has no language picker, login, translation integration or setup step for a local reviewer.
 
-Use one centered column (max 960 CSS px with 16 px mobile gutters). At 360 px the title, input, buttons, legend, result and segment list stay in one flow without horizontal scroll. At 768 px or wider, example controls align beside each other when they fit. Input and result have enough vertical space for a few short lines. Long words and URLs wrap with CSS and maintain original string content for copying.
+The composer and result sit side by side on wider screens and stack below 781 CSS px. At 360 px the title, input, controls and result stay in one flow without horizontal scroll. Long words and URLs wrap without changing the copied text.
 
 | UI state | Behavior |
 |---|---|
 | Ready | Empty field, examples visible, no fake prediction. |
-| Editing | Current typed text stays. Clear the old result on a new example or submission. Mark a prior result as applying to the previous submitted text if the user edits manually and the framework cannot clear it without a round trip. |
+| Editing | Hide the old highlights and Copy actions as soon as the draft differs from the analyzed message. Ask the student to analyze the changed text. |
 | Busy | Show processing near the button. Serialize requests or disable Analyze while a request runs. The latest counter/demo state corresponds to its submitted value. |
 | Empty, invalid or over limit | State the problem near the field, retain input, clear prior result and provide a retry. Never silently truncate. |
 | Neutral only | Display the original with a plain status and no percentage denominator. |
@@ -59,7 +59,7 @@ The implemented renderer uses escaped HTML in Gradio Blocks so the original mess
 - Support exploratory English spans with the same output format. Demo Russian–English and triple mixes as behavior checks unless the actual slices have enough reviewed examples for a quantitative claim.
 - A neutral-only message shows no language claim. An unsupported script or mixed-script word falls to review. An unsupported Latin or Cyrillic language can be mislabeled by a closed-set model. Keep the scope note visible.
 - When no model is available, no statistics or highlighting are rendered. The UI remains usable at 360 px and with keyboard alone. Assess against the [QA cases](TESTING_PLAN.md#user-acceptance).
-- Optional improvements after the first working release are a quick-copy action, bilingual labels and an accessible coverage graphic. Team translation, auto-routing to other people's inboxes, file uploads, login, telemetry and saved message history are outside the MVP.
+- Optional improvements after the first working release include bilingual labels and an accessible coverage graphic. Team translation, auto-routing to other people's inboxes, file uploads, login, telemetry and saved message history are outside the MVP.
 
 ## Privacy behavior
 

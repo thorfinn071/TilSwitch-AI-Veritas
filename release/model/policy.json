@@ -1,4 +1,6 @@
 {
   "mixed_review_recommended": true,
+  "review_kazakh_borrowings": true,
+  "singleton_switch_margin": 0.2,
   "threshold": 0.1
 }

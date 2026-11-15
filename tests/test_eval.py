@@ -5,11 +5,12 @@ import pytest
 
 from tilswitch.evaluate import classify_metrics, create_lock, evaluate_test, make_release, summarize
 from tilswitch.infer import analyze
-from tilswitch.model import load_bundle
+from tilswitch.model import load_bundle, save_bundle
 from tilswitch.prepare import _candidate_hash, review_candidates
 from tilswitch.text import tokenize
 from tilswitch.train import train
-from tilswitch.types import InputError, RunConfig, file_sha, write_json, write_rows
+from tilswitch.types import InputError, RunConfig, file_sha, read_json, write_json, write_rows
+from tilswitch.word_evidence import WordEvidence
 
 TEXT = {
     "kk": ["Сәлем достар", "Бүгін сабақ болады", "Қазақша сөйлесейік"],
@@ -38,11 +39,14 @@ def test_abstention_counts_as_error_and_absent_class_is_unavailable():
 def test_switch_scores_treat_review_as_negative_and_exclude_indeterminate():
     rows = [{"gold_message": gold, "outcome": predicted, "short": True, "tokens": []}
             for gold, predicted in [("mixed", "mixed"), ("mixed", "needs_review"),
+                                    ("mixed", "possible_switch"),
                                     ("non_mixed", "mixed"), ("non_mixed", "kk"),
                                     ("indeterminate", "mixed")]]
     result = summarize(rows, reviewed=True)["switch"]
-    assert result["precision"] == result["recall"] == 0.5
-    assert result["review_outcomes"] == result["indeterminate_or_neutral"] == 1
+    assert result["precision"] == 0.5
+    assert result["recall"] == 1 / 3
+    assert result["review_outcomes"] == 2
+    assert result["indeterminate_or_neutral"] == 1
 
 
 def test_train_lock_score_release_and_digest_guards(tmp_path):
@@ -85,7 +89,22 @@ def test_train_lock_score_release_and_digest_guards(tmp_path):
     assert (cfg.runs / "test" / "per_language.csv").is_file()
     release = cfg.models / "release"
     make_release(cfg, lock_path, release)
-    assert analyze("Hello everyone!", load_bundle(release))["model_id"].startswith("word-")
+    model = load_bundle(release)
+    assert analyze("Hello everyone!", model)["model_id"].startswith("word-")
+    assert model.policy.singleton_switch_margin == 0.0
+    assert not model.policy.review_kazakh_borrowings
+    possible_policy = replace(model.policy, singleton_switch_margin=0.35, review_kazakh_borrowings=True)
+    possible = cfg.models / "possible-switch"
+    save_bundle(possible, replace(model, policy=possible_policy), read_json(release / "metadata.json"))
+    assert load_bundle(possible).policy == possible_policy
+    assert model.word_evidence is None
+    evidence = WordEvidence(frozenset({"гой", "далага"}), frozenset({"гой"}))
+    recovered = cfg.models / "word-recovery"
+    save_bundle(recovered, replace(model, word_evidence=evidence), {})
+    assert load_bundle(recovered).word_evidence == evidence
+    write_json(recovered / "word-evidence.json", {})
+    with pytest.raises(InputError, match="checksum"):
+        load_bundle(recovered)
     with pytest.raises(InputError, match="exists"):
         evaluate_test(cfg, lock_path, cfg.runs / "test")
     (cfg.prepared / "test.jsonl").write_text("{}", encoding="utf-8")

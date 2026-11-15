@@ -24,7 +24,7 @@ build-backend = "setuptools.build_meta"
 include = ["tilswitch*"]
 
 [tool.setuptools.package-data]
-tilswitch = ["demo.css"]
+tilswitch = ["demo.css", "demo.js"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

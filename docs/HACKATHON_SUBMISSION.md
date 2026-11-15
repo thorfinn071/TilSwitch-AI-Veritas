@@ -1,6 +1,6 @@
-# TilSwitch AI hackathon submission plan
+# TilSwitch AI hackathon submission handoff
 
-The current submission write-up is the GitHub README with the locked KRCS results. Nurmukhamed Sabit is the solo entrant. The initial Nov 14 package remains available at its original commit. [Public code](https://github.com/thorfinn071/TilSwitch-AI-Veritas) · [Current write-up](../README.md) · [Results](RESULTS.md) · [Credits](DATA_AND_MODELS.md) · [Initial write-up](https://github.com/thorfinn071/TilSwitch-AI-Veritas/blob/e725a7e721c4ea156096f0693e94f7fd51c850f6/README.md)
+Use the README in the same version as the submission bundle for the one-page write-up. Nurmukhamed Sabit is the solo entrant. The latest verified public fallback is the original locked KRCS release at `988119e`. The 0.35 submission bundle is staged locally for the entrant. [Proposed write-up](../README.md) · [Results](RESULTS.md) · [Credits](DATA_AND_MODELS.md) · [Public fallback](https://github.com/thorfinn071/TilSwitch-AI-Veritas/tree/988119e483ffd6b8c26e9543a98e7ec044e592d0)
 
 ## Official requirements and source precedence
 
@@ -17,14 +17,16 @@ The organizer PDF governs the track and document format. The official submission
 
 **Times** US ET kickoff Sat Nov 14 00:00 and hard close Sun Nov 15 23:59. Kazakhstan UTC+5 kickoff Sat Nov 14 10:00 and hard close Mon Nov 16 09:59. Target the first valid submission by Mon **00:30**. A late-start fallback targets Mon **06:30**. Record actual early submission and latest update times. [Roadmap](MASTER_PLAN.md#solo-schedule)
 
-The official Airtable form displayed its Submit button in signed-out Chrome. The designated entrant submits through the form and keeps the receipt. If the form fails on submission, email the organizer immediately with both verified links. The official deadline still governs. [Official submission form](https://airtable.com/appypCyHN77hElIcS/shrXA5VBFdugmoXl6) · [Organizer instructions](https://highschoolhackathon.org/briefs)
+The official Airtable form displayed its Submit button in signed-out Chrome on Nov 15. The designated entrant submits through the form and keeps the receipt. If the form fails on submission, email the organizer immediately with both verified links. The official deadline still governs. [Official submission form](https://airtable.com/appypCyHN77hElIcS/shrXA5VBFdugmoXl6) · [Organizer instructions](https://highschoolhackathon.org/briefs)
+
+The first visible Git commit was made Nov 14 at 22:05 in Qyzylorda, after the 10:00 kickoff. The intake record describes an empty repository, and local source and evaluation timestamps are consistent with the competition window. The entrant should confirm the coding window and project provenance before accepting the organizer's rules. Git and file timestamps cover only the records examined. [Development record](../PROGRESS.md) · [48-hour coding rule](https://highschoolhackathon.org/faq)
 
 ## Public package
 
 | Artifact | Requirement and content |
 |---|---|
-| Public GitHub repo or viewable Colab | Link to a versioned release/commit when practical. Clean setup path, Python lock, inference entry and one reproduction command sequence. Verify the old link stays valid after updates. Keep raw or identifying input excluded. |
-| README write-up | Serve the approximately one-page competition write-up. Use the organizer's template below and link to extended docs for details. Include one minimal quickstart and one actual output comparison. GitHub README is the selected one official write-up format. |
+| Public GitHub repo or viewable Colab | Use the commit link carrying `release/submission/model`, its aggregate evidence, and the pinned dependencies. Check the code and README links in a signed-out window. Keep raw or identifying input excluded. |
+| README write-up | Use the README at that same commit as the one-page write-up. It identifies the original KRCS evaluation and the later cutoff-selection comparison. |
 | DATA_AND_MODELS.md | Combine dataset register, correction/exclusion rules, source credits, license obligations, split/hashes and a model card with intended use, hardware/config, known error conditions, scope and private fields kept out of the release. Attribute permitted displays. Where allowed, publish the external gold as source IDs, token offsets and labels with its attribution and share-alike terms, and let the reproduction command fetch the pinned source text. Where rights or privacy prevent this, publish eligible aggregate outputs, mask cases as needed and state exactly which checks reviewers can reproduce. |
 | RESULTS.md and run receipts | Combine experiment instructions, actual per-language results, baseline table, counts, error examples, reproducibility and limits. Record run/model/data IDs, class support, coverage and origin. Reference the exact release. Keep unrun rows labeled pending until measured. |
 | Optional demo media | A single ≤2 min screen recording of the real model. Verify shared playback in a signed-out window and links inside the write-up. |
@@ -35,24 +37,28 @@ The official Airtable form displayed its Submit button in signed-out Chrome. The
 1. **TilSwitch AI**, **Languages** and team name(s) in the organizer's format.
 2. **The problem** in two or three sentences. A student who reads one school-chat language more comfortably needs to isolate the part to ask about or translate.
 3. **What we built** in three or four sentences. Describe a real input/output loop, Cyrillic Kazakh and Russian, English support, and the exact release path the judge can run.
-4. **What we added** in two or three sentences. Build on the language-ID starter with a word-level workflow and independent bilingual annotation of an informal sample. Describe any context comparison or loanword analysis that actually happened. Identify the specific starter and credit related research.
+4. **What we added** in two or three sentences. Build on the language-ID starter with a word-level workflow and bilingual review. Describe the context comparison and explain that the cutoff-selection labels were AI-drafted and confirmed by one reviewer. Identify the specific starter and credit related research.
 5. **How it works** in four or five lines. List sources, actual train/dev/test sizes after exclusions, the script rule, character features, context setting and abstention policy.
 6. **Results** with one small table. Rows for evaluated models, columns for source, word macro-F1, language-specific scores and word/message support, with links to full tables. Include one exact input, expected labels, the actual baseline/candidate output and plausible cause of a failure. Give coverage and sample origin so the result can be interpreted.
 7. **What we'd do next** in one or two concrete items, for example independent bilingual review or a properly held-out romanization dataset.
 8. **Sources** with dataset, third-party model, tool and tutorial hyperlinks, including Codex if used. Keep contributor and library notices in the linked credit file when longer than a line.
 
-## Demo recording plan
+## Two-minute demo script
 
-Record after the first receipt. Use a clean browser window with the release model loaded locally. Close unrelated tabs and notifications, zoom for readability and keep the output from real inference. Pick the clearest allowed held-out failure by the error-analysis policy after evaluation. Use an authored demonstration message for the main live paste. Avoid private chats, unrelated account info and raw annotation spreadsheets on screen.
+Launch `python -m tilswitch demo --bundle release/submission/model` and open the local app in a clean browser window. The examples in the demo are authored. The results page credits the sources for the evaluation. [Run instructions](../README.md) · [Results](RESULTS.md)
 
-| Timestamp | Speaking and screen outline |
-|---|---|
-| 00:00–00:15 | “A school group message can switch languages mid-sentence. A student who reads Kazakh or Russian more easily wants to find just the phrase to ask about.” Show one message. |
-| 00:15–01:15 | Paste the authored school example and press Analyze. Point to two actual highlights, the words used for the mixed decision and the phrase to copy. Use a second short case to show what the app does when evidence is weak. |
-| 01:15–01:45 | Explain that each word supplies short character patterns and that the experimental classifier also sees neighbors. Show the result table with real baseline/model values and the size/origin of the held-out set. Show expected and predicted labels on the same short example. |
-| 01:45–01:56 | Name one actual weakness and a realistic next data collection or evaluation step. End at about 1:56 for export margin. |
+| Time | On screen | Narration |
+|---|---|---|
+| 00:00–00:18 | Open **School announcement**. | “A school group message can start in Kazakh and give the meeting location in Russian. If I need help with just the location, I first have to find that phrase.” |
+| 00:18–00:42 | Select **Analyze** and **Copy** beside **в актовом зале**. | “TilSwitch highlights the languages and keeps the spelling and punctuation as written. I can copy the complete Russian phrase, including the one-letter preposition. The analysis runs on this computer.” |
+| 00:42–01:02 | Analyze **One-word switch**, then **Possible borrowing**. | “Here, *позже* is the Russian word. In the borrowing example, *пропускпен* has a possible Kazakh ending, so the app asks me to review it.” |
+| 01:02–01:24 | Show the method paragraph in the README. | “Kazakh and Russian share Cyrillic. We trained logistic regression on short character patterns in Tatoeba words. The word-only model passed our development gate. The app uses extra checks for some spellings, short words, and borrowings.” |
+| 01:24–01:45 | Show the 60-message comparison. | “We chose the new alert cutoff on this set. False firm alerts fell from four to two across 26 single-language references. Both settings detected all 20 mixed messages, including 10 one-word switches.” |
+| 01:45–02:00 | Analyze `Salem qalaysyn` and point out the English label. | “Romanized Kazakh can be mistaken for English. We still need independent school-chat testing. Today the app gives students a specific phrase to ask about.” |
 
-Record at readable resolution, turn captions on if easy, play back the exact upload signed out, and submit the optional link only while the previous complete submission remains safe.
+Record at readable resolution and verify signed-out playback of the exact upload. Add an optional clip only if it uses the submission bundle and runs at most two minutes.
+
+For a short student pilot, use two comparable authored announcements with the location phrase in a different language from the rest. Ask classmates to find the phrase explaining where to go. Show one message as plain text and one with the live highlights, then alternate the order across participants. Record task completion and elapsed time for each, without names.
 
 ## Judging strategy
 
@@ -67,11 +73,35 @@ The highest-value additions after the minimum baseline work are a stronger bilin
 
 ## Submission checklist
 
-- [x] Public GitHub code with read permissions, pinned write-up, runnable instructions and actual demo output.
-- [x] README write-up with word and language-level results, a paired reference and failed prediction, original contribution and sources.
-- [ ] Required track and names, emails and schools for all real contributors, as they should appear on certificates. One designated entrant submits for the team.
-- [x] Credits for the datasets, tools, libraries and prior work. The release includes model files and aggregate evidence and keeps raw data and review sheets local.
-- [ ] Optional video link works signed out and runs no more than 2:00. If absent, a working demo path still exists in code.
-- [x] Verified the fallback code, write-up, results and credits links signed out and ran the CLI and tests from an anonymous clone.
-- [ ] Submit early through the official form. Save time, receipt or confirmation and exact links. Follow the official contact route immediately if the form fails.
-- [ ] Resubmit only a verified improvement before close. Recheck links and keep the latest valid confirmation. [Testing definition of done](TESTING_PLAN.md#definition-of-done)
+- [x] Public fallback at `988119e` is reachable signed out.
+- [x] The proposed README reports the original KRCS results, the cutoff-selection result, an observed error and credits.
+- [x] The local submission bundle contains weights, vocabulary, spelling evidence, policy and aggregate results.
+- [ ] Publish the exact staged tree and verify the commit and README links signed out. Check that the published manifest matches the local release.
+- [ ] Select **AI + Languages** and enter the entrant's full name, school and email privately in the form. Confirm the competition-window and contribution requirements.
+- [ ] Use the pinned code link and the README at that commit as the single write-up. If adding a video, check that anyone with the link can play it and that it is at most 2:00.
+- [ ] The entrant submits through the official form and records the exact links, time and confirmation. Use the official support route if submission fails. [Organizer instructions](https://highschoolhackathon.org/briefs)
+
+## Publish the verified tree
+
+Use the local handoff patch at `artifacts/submission-handoff/tilswitch-submission.patch` from the development workspace. From the repository root, apply it to a clean worktree based on the public fallback commit. Choose an unused branch and sibling folder if these names are already in use.
+
+```powershell
+$patch = (Resolve-Path -LiteralPath 'artifacts/submission-handoff/tilswitch-submission.patch').Path
+git worktree add -b codex/tilswitch-submission ..\tilswitch-submission 988119e483ffd6b8c26e9543a98e7ec044e592d0
+if ($LASTEXITCODE -ne 0) { throw 'Could not create the submission worktree.' }
+Set-Location ..\tilswitch-submission
+git apply --index $patch
+if ($LASTEXITCODE -ne 0) { throw 'The submission patch did not apply.' }
+git diff --cached --stat
+git write-tree
+```
+
+Compare the tree ID with the local handoff receipt. Run the [README quickstart](../README.md#what-we-built) in that worktree. The verification command should print a 0.35 Mixed-alert cutoff. After reviewing the staged changes, the entrant can commit and push this branch.
+
+```powershell
+git commit -m "Prepare TilSwitch AI hackathon submission"
+git push origin HEAD
+git rev-parse HEAD
+```
+
+Use the printed commit ID in `https://github.com/thorfinn071/TilSwitch-AI-Veritas/tree/<commit>` for code and `/blob/<commit>/README.md` on the same repository for the write-up. Verify both links signed out and check that `release/submission/model/manifest.json` at that commit matches the local manifest. Then follow the checklist and save the organizer's confirmation.
