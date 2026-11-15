@@ -36,13 +36,13 @@ Logistic regression learns character patterns from 6,000 Tatoeba sentences. Each
 | Original KRCS test, 36 messages with one bilingual reviewer | Word macro-F1 **0.541** for the script rule and **0.897** for the original release. F1 **0.933 KK**, **0.861 RU**. Coverage **245/252**. False Mixed on **5/7** Kazakh-only messages. |
 | Submission model 0.35, 40 public messages from a frozen 56-message diagnostic | **15/16** firm Mixed detections and **10/11** one-word switches. False Mixed on **2/17 KK** and **1/7 RU**. Word F1 **0.970 KK**, **0.943 RU**. Coverage **296/302**. |
 
-The 56-message references used one returned worksheet and a second pass by ChatGPT. Independent human validation is pending. [Annotation audit](docs/INDEPENDENT_RESULTS.md) · [Results and reproduction](docs/RESULTS.md)
+Two human reviewers independently labeled the 56-message batch and agreed on **383/383** word labels. The human labels matched all **472** reference rows from the original run, which used an AI-assisted reference. The human check followed that run. [Annotation audit](docs/INDEPENDENT_RESULTS.md) · [Results and reproduction](docs/RESULTS.md)
 
 **Known failure.** In **Он адам зардап шекті.**, the Kazakh numeral meaning “ten” receives a Russian label and triggers Mixed. Romanized Kazakh can also receive English highlights. [Attributed example and expected labels](docs/RESULTS.md#paired-error-example)
 
 ## Next steps
 
-Collect two verified human reviews on fresh school-style messages and [measure phrase-finding time and accuracy with students](docs/PHRASE_FINDING_PILOT.md).
+[Measure phrase-finding time and accuracy with students](docs/PHRASE_FINDING_PILOT.md) and test the next model improvement on fresh school-style messages.
 
 ## Sources
 

@@ -8,7 +8,7 @@ from tilswitch.model import load_bundle
 from tilswitch.types import InputError, file_sha, json_dump, read_json, text_sha
 
 DIAGNOSTIC_EVIDENCE = Path("release/evidence/holdout-56.json")
-DIAGNOSTIC_SHA256 = "4dddaeee555e644f3873820677605060cd03dc1b62ac1a396f7718dcd178e83c"
+DIAGNOSTIC_SHA256 = "8c95228020140d70551733b218da1600cd7f04d0d10522db61b752c45bf48843"
 
 
 def verify_submission(submission: Path = Path("release/submission"), reference: Path = Path("release/model")) -> dict:

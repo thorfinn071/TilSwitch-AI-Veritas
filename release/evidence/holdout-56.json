@@ -324,16 +324,28 @@
     "outcomes_changed": 0
   },
   "reference_provenance": {
-    "adjudication": "Both disputed rows took the recorded R1 labels after review in the R2 ChatGPT conversation.",
-    "before_adjudication_exact": 381,
-    "cohen_kappa": 0.9900338277387458,
-    "disputed_spans": 2,
-    "kind": "ai_assisted_diagnostic",
+    "cached_metrics_match_original": true,
+    "cohen_kappa": 1.0,
+    "confirmation": "The entrant relayed that R1 and the replacement R2 are human reviewers who independently completed blank worksheets without the other answers or model predictions. No AI assistance was reported for these two reviews.",
+    "confirmation_source": "entrant relaying both reviewers' attestations",
+    "disputed_spans": 0,
+    "human_reference_sha256": "a8815263b5d7ba8cd70315417006d8212cbc63dad0bc6760e2a026d701f87b7f",
+    "human_review_receipt_sha256": "af8aa6b74f3b16e5e357f2361d0c62497aa7f105c6b15352a44ab5863739cc07",
+    "kind": "human_reviewed",
+    "label_agreement_count": 383,
     "lexical_spans": 383,
-    "r1": "Returned worksheet and a self-report relayed in chat. Human provenance was not independently verified.",
+    "matching_scoring_reference_rows": 472,
+    "message_references_matching": 56,
+    "original_scoring_run": {
+      "adjudication": "Both disputed rows took the recorded R1 labels after review in the R2 ChatGPT conversation.",
+      "label_agreement_count": 381,
+      "lexical_spans": 383,
+      "r2": "ChatGPT",
+      "r2_file_sha256": "5dd944acd548385c0e39ac732021e873b583980f1e4cba47b5878cb052f58f7f"
+    },
     "r1_file_sha256": "cd85c484ac2f67b2d6096155e6f257ba18a3f51fc33e825c82a9100dec6d4a2d",
-    "r2": "ChatGPT generated the labels from the blank worksheet and guide and identified its review as AI.",
-    "r2_file_sha256": "5dd944acd548385c0e39ac732021e873b583980f1e4cba47b5878cb052f58f7f",
-    "two_human_blind_reviews_verified": false
+    "r2_file_sha256": "47aba28e8165652dfa609ac1834a82a3526776cda30f25a19746a37b1eece6e3",
+    "review_timing": "Independent human label check completed after the original scoring run.",
+    "scoring_reference_rows": 472
   }
 }

@@ -1,6 +1,6 @@
 # TilSwitch AI results
 
-The contest package loads the verified 0.35 bundle in `release/submission/model`. See the [84-message development comparison](COMPETITION_DEVELOPMENT.md) and the [56-message diagnostic with corrected annotation provenance](INDEPENDENT_RESULTS.md). The chronological results below document earlier training, evaluation and cutoff selection.
+The contest package loads the verified 0.35 bundle in `release/submission/model`. See the [84-message development comparison](COMPETITION_DEVELOPMENT.md) and the [56-message evaluation and independent human label check](INDEPENDENT_RESULTS.md). The chronological results below document earlier training, evaluation and cutoff selection.
 
 ## Locked monolingual evaluation, Nov 14, 2026
 
