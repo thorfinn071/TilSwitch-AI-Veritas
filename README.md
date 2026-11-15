@@ -42,11 +42,13 @@ Logistic regression uses TF-IDF features for sequences of one to four characters
 
 **Later 60-message cutoff comparison.** We compared 0.20 and 0.35 on these KazNLP comments and reviews, then selected 0.35. Codex drafted the labels and one bilingual reviewer confirmed them. Firm alerts fell from **4/26 to 2/26** on resolved single-language references. Both cutoffs detected **20/20** mixed messages, including **10/10** one-word switches. Fourteen references were indeterminate and outside those totals. A lone word now needs a larger gap between its two leading language scores to support a firm alert. We show **Possible switch** for weaker evidence and keep the word highlights. [Aggregate evidence](release/submission/reviewed-switch.json) · [Full results and limits](docs/RESULTS.md)
 
-In **«Қалаға тек пропускпен кіреді десеші»**, all five reference words are Kazakh. The original release labeled **пропускпен** Russian. The submission bundle marks it uncertain and explains the possible Kazakh ending **-пен**. Other borrowings can still be misclassified, and romanized Kazakh can appear as English. Independent confirmation of the new cutoff on school chats is still needed. [KRCS row 385, Borisov, Kozhirbayev and Malykh](https://github.com/madrugado/KRCS/blob/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+**Independent 0.35 evaluation.** Two reviewers independently labeled a frozen 56-message holdout. On the 40 selected public messages, 0.35 detected **15/16** mixed messages and **10/11** one-word switches, with **3/24** false firm alerts on monolingual messages. A proposed borrowing rule left all public outcomes the same and downgraded a one-word switch in a synthetic control. We kept 0.35. [Independent results and method](docs/INDEPENDENT_RESULTS.md)
+
+In **«Қалаға тек пропускпен кіреді десеші»**, all five reference words are Kazakh. The original release labeled **пропускпен** Russian. The submission bundle marks it uncertain and explains the possible Kazakh ending **-пен**. English results carry a reminder to check the highlight when the input may be romanized Kazakh or another Latin-script language. [KRCS row 385, Borisov, Kozhirbayev and Malykh](https://github.com/madrugado/KRCS/blob/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## What we would do next
 
-Ask two bilingual reviewers to label a fresh set of school-style messages independently. Time how quickly students find the phrase they need help with.
+Time how quickly students find and accurately copy the phrase they need help with. Test short English and romanized Kazakh on fresh conversational data before changing the language predictions.
 
 ## Sources
 

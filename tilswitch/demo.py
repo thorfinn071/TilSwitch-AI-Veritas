@@ -67,6 +67,8 @@ def render_result(result: dict) -> str:
         title = "Mixed language evidence · review" if result["mixed_review_recommended"] else "Mixed languages"
     elif status == "possible_switch":
         title = "Possible switch"
+    elif status == "single" and result["primary_language"] == "en":
+        title = "English evidence"
     elif status == "single":
         title = f"{LANGUAGE_NAMES[result['primary_language']]} detected"
     elif status == "needs_review":
@@ -85,6 +87,11 @@ def render_result(result: dict) -> str:
         note = '<p class="analysis-note">The switch depends on a word with close language scores. Check the highlights.</p>'
     if result["has_unknown"]:
         note += '<p class="analysis-note">Review uncertain words before using the result.</p>'
+    if result["counts"]["en"]:
+        note += (
+            '<p class="analysis-note">Check the English highlights if you expect Kazakh typed in Latin letters '
+            'or another Latin-script language.</p>'
+        )
     groups = (
         '<div class="segment-section"><h3>Detected phrases</h3>'
         f'<ul class="segments">{"".join(rows)}</ul>'

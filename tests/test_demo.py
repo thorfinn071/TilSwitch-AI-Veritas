@@ -47,6 +47,16 @@ def test_render_shows_uncertainty_as_readable_text():
     assert "Uncertain" in markup
 
 
+def test_result_shows_latin_script_caution_for_english_highlights():
+    guidance = "Check the English highlights if you expect Kazakh typed in Latin letters or another Latin-script language."
+    english = render_result(analyze("Bring the folder", None))
+    assert "English evidence" in english and guidance in english
+    assert 'lang="en">Bring the folder</mark>' in english
+    mixed = render_result(analyze("Кел ertenge", None))
+    assert "Mixed language evidence" in mixed and guidance in mixed
+    assert guidance not in render_result(analyze("Ертең мектепке кел", None))
+
+
 def test_possible_switch_keeps_the_one_word_highlight():
     raw = "Сәлем, завтра барамыз"
     model = SimpleNamespace(model_id="fixture", mode="word", classes=("kk", "ru", "en"), policy=Policy(0.10),
