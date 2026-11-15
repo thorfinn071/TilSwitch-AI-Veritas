@@ -11,6 +11,7 @@ APOSTROPHES = "'’ʼ‘"
 DASHES = "-‐‑‒–—"
 FEATURE_TRANSLATION = str.maketrans({**dict.fromkeys(APOSTROPHES, "'"), **dict.fromkeys(DASHES, "-")})
 TERMINAL = frozenset(".!?…")
+PHRASE_JOINERS = frozenset(" \t\u00a0\u202f,;:–—")
 WORD_PART = r"(?:[\p{L}\p{Nd}]\p{M}*)"
 CONNECTOR = regex.escape(APOSTROPHES + DASHES)
 SCANNER = regex.compile(
@@ -136,19 +137,16 @@ def neighbors(raw: str, tokens: list[Token]) -> list[tuple[str, str]]:
 
 def group_segments(raw: str, predictions: list[dict]) -> list[dict]:
     segments = []
-    preceding_lexical = False
     for prediction in predictions:
         label = prediction["label"]
         if label == "neutral":
-            preceding_lexical = False
             continue
         start, end = prediction["start"], prediction["end"]
-        if preceding_lexical and segments[-1]["label"] == label:
+        if segments and segments[-1]["label"] == label:
             gap = raw[segments[-1]["end"]:start]
-            if gap and all(character in " \t\u00a0\u202f" for character in gap):
+            if gap and PHRASE_JOINERS.issuperset(gap):
                 segments[-1]["end"] = end
                 segments[-1]["text"] = raw[segments[-1]["start"]:end]
                 continue
         segments.append({"start": start, "end": end, "text": raw[start:end], "label": label})
-        preceding_lexical = True
     return segments

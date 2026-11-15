@@ -68,9 +68,13 @@ def test_possible_switch_keeps_the_one_word_highlight():
     assert possible["primary_language"] is None
     assert possible["tokens"] == mixed["tokens"]
     assert possible["segments"] == mixed["segments"]
+    assert possible["tentative_languages"] == ["ru"]
+    assert mixed["tentative_languages"] == []
     markup = render_result(possible)
     assert "Possible switch" in markup
-    assert 'lang="ru">завтра</mark>' in markup
+    assert 'class="language-ru language-tentative" lang="ru">завтра</mark>' in markup
+    assert 'class="language-kk language-tentative"' not in markup
+    assert "Tentative language label" in markup
     assert analyze(raw, model, Policy(0.10, singleton_switch_margin=0.20))["status"] == "mixed"
 
 

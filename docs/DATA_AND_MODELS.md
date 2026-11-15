@@ -24,6 +24,6 @@ The training cache and review sheets are local. The bundled weights and vectoriz
 
 ## Tools and prior work
 
-OpenAI Codex assisted with planning, coding, documentation, testing and the first draft of the later review labels. The fitted model was trained for this project with scikit-learn.
+OpenAI Codex assisted with planning, coding, documentation, testing and the first draft of the earlier 60-message comparison labels. [ChatGPT](https://chatgpt.com/) produced the R2 worksheet and participated in the two disputed decisions for the separate 56-message diagnostic. The fitted model was trained for this project with scikit-learn. [Annotation provenance](INDEPENDENT_RESULTS.md)
 
 [Project Briefs, language identification starter](https://highschoolhackathon.org/briefs) · [KazRusCSW prior work](https://github.com/liminovna/KazRusCSW) · [OpenAI Codex](https://openai.com/codex/) · [Python](https://www.python.org/) · [NumPy](https://numpy.org/) · [SciPy](https://scipy.org/) · [scikit-learn](https://scikit-learn.org/) · [regex](https://pypi.org/project/regex/) · [threadpoolctl](https://pypi.org/project/threadpoolctl/) · [Gradio](https://gradio.app/) · [pytest](https://docs.pytest.org/) · [Playwright](https://playwright.dev/python/) · [uv](https://docs.astral.sh/uv/). The dependency locks list transitive packages and exact versions.

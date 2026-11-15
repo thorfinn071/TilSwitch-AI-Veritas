@@ -81,6 +81,16 @@ def test_neutral_and_line_breaks_stop_highlight_merges():
     assert [segment["text"] for segment in result["segments"]] == ["hello world", "hello world"]
 
 
+def test_copyable_phrase_retains_internal_punctuation_and_spacing():
+    raw = "Сәлем, bring your notebook,  right after lunch. Thank you 🙂 goodbye"
+    result = analyze(raw, None)
+    english = [span for span in result["segments"] if span["label"] == "en"]
+    assert [span["text"] for span in english] == [
+        "bring your notebook,  right after lunch", "Thank you", "goodbye",
+    ]
+    assert all(raw[span["start"]:span["end"]] == span["text"] for span in english)
+
+
 def test_first_word_on_a_new_line_can_supply_following_context():
     raw = "Сәлем сабақ\r\nқайта келсең хабарла"
     tokens = tokenize(raw)

@@ -1,0 +1,1334 @@
+{
+  "authored_fixture_sha256": "cb73dd61c596a7032670040b1fed67520367e06b35349064e0390f547bb0e300",
+  "bundle_manifests_sha256": {
+    "context": "154241f429d2fba24129c4581b7601e858832bfb945a459d86e19d73b50b2821",
+    "cutoff_020": "ef4a9c31a9a7ecf724783b5c376d3e2af42b2150fe382b0dcf3f82bc8431c4bf",
+    "cutoff_035": "d628e4fe4778161ab27d4ea424d63061d37ec9bdd0122828d19d1c88dc23a3aa"
+  },
+  "cohorts": {
+    "authored_development": {
+      "messages": 12,
+      "variants": {
+        "context": {
+          "exact_phrases": {
+            "correct": 15,
+            "predicted": 22,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 1,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 2,
+          "one_word": {
+            "all": 3,
+            "firm": 1
+          },
+          "possible_switch": 1,
+          "switch": {
+            "f1": 0.7272727272727273,
+            "false_negative": 2,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.8,
+            "recall": 0.6666666666666666,
+            "resolved": 12,
+            "review_outcomes": 5,
+            "true_negative": 5,
+            "true_positive": 4
+          },
+          "tokens": {
+            "accepted": 43,
+            "accepted_error": 0.023255813953488372,
+            "accuracy": 0.8936170212765957,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 21,
+                "neutral": 0,
+                "ru": 1,
+                "unk": 0
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 21,
+                "unk": 4
+              }
+            },
+            "coverage": 0.9148936170212766,
+            "macro_f1": 0.9351806036615536,
+            "per_label": {
+              "kk": {
+                "correct": 21,
+                "f1": 0.9767441860465116,
+                "precision": 1.0,
+                "predicted": 21,
+                "recall": 0.9545454545454546,
+                "support": 22
+              },
+              "ru": {
+                "correct": 21,
+                "f1": 0.8936170212765957,
+                "precision": 0.9545454545454546,
+                "predicted": 22,
+                "recall": 0.84,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        },
+        "cutoff_020": {
+          "exact_phrases": {
+            "correct": 16,
+            "predicted": 23,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 0,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 1.0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "indeterminate_or_neutral": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 6,
+            "true_positive": 6
+          },
+          "tokens": {
+            "accepted": 43,
+            "accepted_error": 0.0,
+            "accuracy": 0.9148936170212766,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 19,
+                "neutral": 0,
+                "ru": 0,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 24,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9148936170212766,
+            "macro_f1": 0.9532105525136885,
+            "per_label": {
+              "kk": {
+                "correct": 19,
+                "f1": 0.926829268292683,
+                "precision": 1.0,
+                "predicted": 19,
+                "recall": 0.8636363636363636,
+                "support": 22
+              },
+              "ru": {
+                "correct": 24,
+                "f1": 0.9795918367346939,
+                "precision": 1.0,
+                "predicted": 24,
+                "recall": 0.96,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        },
+        "cutoff_035": {
+          "exact_phrases": {
+            "correct": 16,
+            "predicted": 23,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 0,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 1.0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "indeterminate_or_neutral": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 6,
+            "true_positive": 6
+          },
+          "tokens": {
+            "accepted": 43,
+            "accepted_error": 0.0,
+            "accuracy": 0.9148936170212766,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 19,
+                "neutral": 0,
+                "ru": 0,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 24,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9148936170212766,
+            "macro_f1": 0.9532105525136885,
+            "per_label": {
+              "kk": {
+                "correct": 19,
+                "f1": 0.926829268292683,
+                "precision": 1.0,
+                "predicted": 19,
+                "recall": 0.8636363636363636,
+                "support": 22
+              },
+              "ru": {
+                "correct": 24,
+                "f1": 0.9795918367346939,
+                "precision": 1.0,
+                "predicted": 24,
+                "recall": 0.96,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        },
+        "script": {
+          "exact_phrases": {
+            "correct": 4,
+            "predicted": 24,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 2,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 1,
+          "one_word": {
+            "all": 3,
+            "firm": 2
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.7692307692307693,
+            "false_negative": 1,
+            "false_positive": 2,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.7142857142857143,
+            "recall": 0.8333333333333334,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 4,
+            "true_positive": 5
+          },
+          "tokens": {
+            "accepted": 44,
+            "accepted_error": 0.25,
+            "accuracy": 0.7021276595744681,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 11,
+                "neutral": 0,
+                "ru": 11,
+                "unk": 0
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 22,
+                "unk": 3
+              }
+            },
+            "coverage": 0.9361702127659575,
+            "macro_f1": 0.7126436781609196,
+            "per_label": {
+              "kk": {
+                "correct": 11,
+                "f1": 0.6666666666666666,
+                "precision": 1.0,
+                "predicted": 11,
+                "recall": 0.5,
+                "support": 22
+              },
+              "ru": {
+                "correct": 22,
+                "f1": 0.7586206896551724,
+                "precision": 0.6666666666666666,
+                "predicted": 33,
+                "recall": 0.88,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        },
+        "shared_context_relabel": {
+          "exact_phrases": {
+            "correct": 16,
+            "predicted": 23,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 0,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 1.0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "indeterminate_or_neutral": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 6,
+            "true_positive": 6
+          },
+          "tokens": {
+            "accepted": 43,
+            "accepted_error": 0.0,
+            "accuracy": 0.9148936170212766,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 19,
+                "neutral": 0,
+                "ru": 0,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 24,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9148936170212766,
+            "macro_f1": 0.9532105525136885,
+            "per_label": {
+              "kk": {
+                "correct": 19,
+                "f1": 0.926829268292683,
+                "precision": 1.0,
+                "predicted": 19,
+                "recall": 0.8636363636363636,
+                "support": 22
+              },
+              "ru": {
+                "correct": 24,
+                "f1": 0.9795918367346939,
+                "precision": 1.0,
+                "predicted": 24,
+                "recall": 0.96,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        },
+        "shared_review": {
+          "exact_phrases": {
+            "correct": 16,
+            "predicted": 23,
+            "reference": 20
+          },
+          "false_firm": {
+            "kk_firm": 0,
+            "kk_total": 3,
+            "ru_firm": 0,
+            "ru_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 1.0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "indeterminate_or_neutral": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 6,
+            "true_positive": 6
+          },
+          "tokens": {
+            "accepted": 43,
+            "accepted_error": 0.0,
+            "accuracy": 0.9148936170212766,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 19,
+                "neutral": 0,
+                "ru": 0,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 24,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9148936170212766,
+            "macro_f1": 0.9532105525136885,
+            "per_label": {
+              "kk": {
+                "correct": 19,
+                "f1": 0.926829268292683,
+                "precision": 1.0,
+                "predicted": 19,
+                "recall": 0.8636363636363636,
+                "support": 22
+              },
+              "ru": {
+                "correct": 24,
+                "f1": 0.9795918367346939,
+                "precision": 1.0,
+                "predicted": 24,
+                "recall": 0.96,
+                "support": 25
+              }
+            },
+            "units": 47
+          }
+        }
+      }
+    },
+    "krcs_development": {
+      "messages": 12,
+      "variants": {
+        "context": {
+          "exact_phrases": {
+            "correct": 16,
+            "predicted": 34,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 1,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 2,
+          "one_word": {
+            "all": 3,
+            "firm": 2
+          },
+          "possible_switch": 2,
+          "switch": {
+            "f1": 0.8235294117647058,
+            "false_negative": 2,
+            "false_positive": 1,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.875,
+            "recall": 0.7777777777777778,
+            "resolved": 12,
+            "review_outcomes": 3,
+            "true_negative": 2,
+            "true_positive": 7
+          },
+          "tokens": {
+            "accepted": 77,
+            "accepted_error": 0.16883116883116883,
+            "accuracy": 0.7901234567901234,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 31,
+                "neutral": 0,
+                "ru": 13,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9506172839506173,
+            "macro_f1": 0.8099358974358974,
+            "per_label": {
+              "kk": {
+                "correct": 31,
+                "f1": 0.7948717948717948,
+                "precision": 1.0,
+                "predicted": 31,
+                "recall": 0.6595744680851063,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.825,
+                "precision": 0.717391304347826,
+                "predicted": 46,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        },
+        "cutoff_020": {
+          "exact_phrases": {
+            "correct": 21,
+            "predicted": 40,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 9
+          },
+          "tokens": {
+            "accepted": 78,
+            "accepted_error": 0.14102564102564102,
+            "accuracy": 0.8271604938271605,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 34,
+                "neutral": 0,
+                "ru": 10,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 1,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 0
+              }
+            },
+            "coverage": 0.9629629629629629,
+            "macro_f1": 0.8432055749128919,
+            "per_label": {
+              "kk": {
+                "correct": 34,
+                "f1": 0.8292682926829268,
+                "precision": 0.9714285714285714,
+                "predicted": 35,
+                "recall": 0.723404255319149,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.8571428571428571,
+                "precision": 0.7674418604651163,
+                "predicted": 43,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        },
+        "cutoff_035": {
+          "exact_phrases": {
+            "correct": 21,
+            "predicted": 40,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 9
+          },
+          "tokens": {
+            "accepted": 78,
+            "accepted_error": 0.14102564102564102,
+            "accuracy": 0.8271604938271605,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 34,
+                "neutral": 0,
+                "ru": 10,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 1,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 0
+              }
+            },
+            "coverage": 0.9629629629629629,
+            "macro_f1": 0.8432055749128919,
+            "per_label": {
+              "kk": {
+                "correct": 34,
+                "f1": 0.8292682926829268,
+                "precision": 0.9714285714285714,
+                "predicted": 35,
+                "recall": 0.723404255319149,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.8571428571428571,
+                "precision": 0.7674418604651163,
+                "predicted": 43,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        },
+        "script": {
+          "exact_phrases": {
+            "correct": 3,
+            "predicted": 32,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 2,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 5,
+          "one_word": {
+            "all": 3,
+            "firm": 0
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.5333333333333333,
+            "false_negative": 5,
+            "false_positive": 2,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.6666666666666666,
+            "recall": 0.4444444444444444,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 1,
+            "true_positive": 4
+          },
+          "tokens": {
+            "accepted": 80,
+            "accepted_error": 0.45,
+            "accuracy": 0.5432098765432098,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 11,
+                "neutral": 0,
+                "ru": 36,
+                "unk": 0
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 1
+              }
+            },
+            "coverage": 0.9876543209876543,
+            "macro_f1": 0.5100435219283562,
+            "per_label": {
+              "kk": {
+                "correct": 11,
+                "f1": 0.3793103448275862,
+                "precision": 1.0,
+                "predicted": 11,
+                "recall": 0.23404255319148937,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.6407766990291263,
+                "precision": 0.4782608695652174,
+                "predicted": 69,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        },
+        "shared_context_relabel": {
+          "exact_phrases": {
+            "correct": 21,
+            "predicted": 40,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 9
+          },
+          "tokens": {
+            "accepted": 78,
+            "accepted_error": 0.14102564102564102,
+            "accuracy": 0.8271604938271605,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 34,
+                "neutral": 0,
+                "ru": 10,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 1,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 0
+              }
+            },
+            "coverage": 0.9629629629629629,
+            "macro_f1": 0.8432055749128919,
+            "per_label": {
+              "kk": {
+                "correct": 34,
+                "f1": 0.8292682926829268,
+                "precision": 0.9714285714285714,
+                "predicted": 35,
+                "recall": 0.723404255319149,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.8571428571428571,
+                "precision": 0.7674418604651163,
+                "predicted": 43,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        },
+        "shared_review": {
+          "exact_phrases": {
+            "correct": 21,
+            "predicted": 40,
+            "reference": 34
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 3
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 3,
+            "firm": 3
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 3,
+            "indeterminate_or_neutral": 0,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 12,
+            "review_outcomes": 0,
+            "true_negative": 0,
+            "true_positive": 9
+          },
+          "tokens": {
+            "accepted": 78,
+            "accepted_error": 0.14102564102564102,
+            "accuracy": 0.8271604938271605,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 34,
+                "neutral": 0,
+                "ru": 10,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 1,
+                "neutral": 0,
+                "ru": 33,
+                "unk": 0
+              }
+            },
+            "coverage": 0.9629629629629629,
+            "macro_f1": 0.8432055749128919,
+            "per_label": {
+              "kk": {
+                "correct": 34,
+                "f1": 0.8292682926829268,
+                "precision": 0.9714285714285714,
+                "predicted": 35,
+                "recall": 0.723404255319149,
+                "support": 47
+              },
+              "ru": {
+                "correct": 33,
+                "f1": 0.8571428571428571,
+                "precision": 0.7674418604651163,
+                "predicted": 43,
+                "recall": 0.9705882352941176,
+                "support": 34
+              }
+            },
+            "units": 81
+          }
+        }
+      }
+    },
+    "reviewed_development": {
+      "messages": 60,
+      "variants": {
+        "context": {
+          "exact_phrases": {
+            "correct": 79,
+            "predicted": 138,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 2,
+            "kk_total": 10,
+            "ru_firm": 0,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 3,
+          "one_word": {
+            "all": 11,
+            "firm": 8
+          },
+          "possible_switch": 4,
+          "switch": {
+            "f1": 0.8780487804878049,
+            "false_negative": 3,
+            "false_positive": 2,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.9,
+            "recall": 0.8571428571428571,
+            "resolved": 51,
+            "review_outcomes": 14,
+            "true_negative": 28,
+            "true_positive": 18
+          },
+          "tokens": {
+            "accepted": 469,
+            "accepted_error": 0.014925373134328358,
+            "accuracy": 0.9352226720647774,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 224,
+                "neutral": 0,
+                "ru": 4,
+                "unk": 4
+              },
+              "ru": {
+                "en": 0,
+                "kk": 3,
+                "neutral": 0,
+                "ru": 238,
+                "unk": 21
+              }
+            },
+            "coverage": 0.9493927125506073,
+            "macro_f1": 0.960239651416122,
+            "per_label": {
+              "kk": {
+                "correct": 224,
+                "f1": 0.9760348583877996,
+                "precision": 0.986784140969163,
+                "predicted": 227,
+                "recall": 0.9655172413793104,
+                "support": 232
+              },
+              "ru": {
+                "correct": 238,
+                "f1": 0.9444444444444444,
+                "precision": 0.9834710743801653,
+                "predicted": 242,
+                "recall": 0.9083969465648855,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        },
+        "cutoff_020": {
+          "exact_phrases": {
+            "correct": 92,
+            "predicted": 155,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 10,
+            "ru_firm": 4,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 11,
+            "firm": 11
+          },
+          "possible_switch": 1,
+          "switch": {
+            "f1": 0.8571428571428571,
+            "false_negative": 0,
+            "false_positive": 7,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.75,
+            "recall": 1.0,
+            "resolved": 51,
+            "review_outcomes": 7,
+            "true_negative": 23,
+            "true_positive": 21
+          },
+          "tokens": {
+            "accepted": 483,
+            "accepted_error": 0.028985507246376812,
+            "accuracy": 0.9493927125506073,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 221,
+                "neutral": 0,
+                "ru": 8,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 6,
+                "neutral": 0,
+                "ru": 248,
+                "unk": 8
+              }
+            },
+            "coverage": 0.9777327935222672,
+            "macro_f1": 0.9602459602459602,
+            "per_label": {
+              "kk": {
+                "correct": 221,
+                "f1": 0.9629629629629629,
+                "precision": 0.973568281938326,
+                "predicted": 227,
+                "recall": 0.9525862068965517,
+                "support": 232
+              },
+              "ru": {
+                "correct": 248,
+                "f1": 0.9575289575289575,
+                "precision": 0.96875,
+                "predicted": 256,
+                "recall": 0.9465648854961832,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        },
+        "cutoff_035": {
+          "exact_phrases": {
+            "correct": 92,
+            "predicted": 155,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 10,
+            "ru_firm": 2,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 11,
+            "firm": 11
+          },
+          "possible_switch": 3,
+          "switch": {
+            "f1": 0.8936170212765957,
+            "false_negative": 0,
+            "false_positive": 5,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.8076923076923077,
+            "recall": 1.0,
+            "resolved": 51,
+            "review_outcomes": 9,
+            "true_negative": 25,
+            "true_positive": 21
+          },
+          "tokens": {
+            "accepted": 483,
+            "accepted_error": 0.028985507246376812,
+            "accuracy": 0.9493927125506073,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 221,
+                "neutral": 0,
+                "ru": 8,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 6,
+                "neutral": 0,
+                "ru": 248,
+                "unk": 8
+              }
+            },
+            "coverage": 0.9777327935222672,
+            "macro_f1": 0.9602459602459602,
+            "per_label": {
+              "kk": {
+                "correct": 221,
+                "f1": 0.9629629629629629,
+                "precision": 0.973568281938326,
+                "predicted": 227,
+                "recall": 0.9525862068965517,
+                "support": 232
+              },
+              "ru": {
+                "correct": 248,
+                "f1": 0.9575289575289575,
+                "precision": 0.96875,
+                "predicted": 256,
+                "recall": 0.9465648854961832,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        },
+        "script": {
+          "exact_phrases": {
+            "correct": 46,
+            "predicted": 211,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 10,
+            "kk_total": 10,
+            "ru_firm": 0,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 11,
+            "firm": 11
+          },
+          "possible_switch": 0,
+          "switch": {
+            "f1": 0.8076923076923077,
+            "false_negative": 0,
+            "false_positive": 10,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.6774193548387096,
+            "recall": 1.0,
+            "resolved": 51,
+            "review_outcomes": 9,
+            "true_negative": 20,
+            "true_positive": 21
+          },
+          "tokens": {
+            "accepted": 476,
+            "accepted_error": 0.18277310924369747,
+            "accuracy": 0.7874493927125507,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 145,
+                "neutral": 0,
+                "ru": 87,
+                "unk": 0
+              },
+              "ru": {
+                "en": 0,
+                "kk": 0,
+                "neutral": 0,
+                "ru": 244,
+                "unk": 18
+              }
+            },
+            "coverage": 0.9635627530364372,
+            "macro_f1": 0.7960825009728889,
+            "per_label": {
+              "kk": {
+                "correct": 145,
+                "f1": 0.7692307692307693,
+                "precision": 1.0,
+                "predicted": 145,
+                "recall": 0.625,
+                "support": 232
+              },
+              "ru": {
+                "correct": 244,
+                "f1": 0.8229342327150084,
+                "precision": 0.7371601208459214,
+                "predicted": 331,
+                "recall": 0.9312977099236641,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        },
+        "shared_context_relabel": {
+          "exact_phrases": {
+            "correct": 92,
+            "predicted": 155,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 10,
+            "ru_firm": 2,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 11,
+            "firm": 11
+          },
+          "possible_switch": 3,
+          "switch": {
+            "f1": 0.8936170212765957,
+            "false_negative": 0,
+            "false_positive": 5,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.8076923076923077,
+            "recall": 1.0,
+            "resolved": 51,
+            "review_outcomes": 9,
+            "true_negative": 25,
+            "true_positive": 21
+          },
+          "tokens": {
+            "accepted": 483,
+            "accepted_error": 0.028985507246376812,
+            "accuracy": 0.9493927125506073,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 221,
+                "neutral": 0,
+                "ru": 8,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 6,
+                "neutral": 0,
+                "ru": 248,
+                "unk": 8
+              }
+            },
+            "coverage": 0.9777327935222672,
+            "macro_f1": 0.9602459602459602,
+            "per_label": {
+              "kk": {
+                "correct": 221,
+                "f1": 0.9629629629629629,
+                "precision": 0.973568281938326,
+                "predicted": 227,
+                "recall": 0.9525862068965517,
+                "support": 232
+              },
+              "ru": {
+                "correct": 248,
+                "f1": 0.9575289575289575,
+                "precision": 0.96875,
+                "predicted": 256,
+                "recall": 0.9465648854961832,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        },
+        "shared_review": {
+          "exact_phrases": {
+            "correct": 92,
+            "predicted": 155,
+            "reference": 123
+          },
+          "false_firm": {
+            "kk_firm": 3,
+            "kk_total": 10,
+            "ru_firm": 2,
+            "ru_total": 20
+          },
+          "lost_baseline_firm_mixed": 0,
+          "one_word": {
+            "all": 11,
+            "firm": 11
+          },
+          "possible_switch": 3,
+          "switch": {
+            "f1": 0.8936170212765957,
+            "false_negative": 0,
+            "false_positive": 5,
+            "indeterminate_or_neutral": 9,
+            "precision": 0.8076923076923077,
+            "recall": 1.0,
+            "resolved": 51,
+            "review_outcomes": 9,
+            "true_negative": 25,
+            "true_positive": 21
+          },
+          "tokens": {
+            "accepted": 483,
+            "accepted_error": 0.028985507246376812,
+            "accuracy": 0.9493927125506073,
+            "confusion": {
+              "kk": {
+                "en": 0,
+                "kk": 221,
+                "neutral": 0,
+                "ru": 8,
+                "unk": 3
+              },
+              "ru": {
+                "en": 0,
+                "kk": 6,
+                "neutral": 0,
+                "ru": 248,
+                "unk": 8
+              }
+            },
+            "coverage": 0.9777327935222672,
+            "macro_f1": 0.9602459602459602,
+            "per_label": {
+              "kk": {
+                "correct": 221,
+                "f1": 0.9629629629629629,
+                "precision": 0.973568281938326,
+                "predicted": 227,
+                "recall": 0.9525862068965517,
+                "support": 232
+              },
+              "ru": {
+                "correct": 248,
+                "f1": 0.9575289575289575,
+                "precision": 0.96875,
+                "predicted": 256,
+                "recall": 0.9465648854961832,
+                "support": 262
+              }
+            },
+            "units": 494
+          }
+        }
+      }
+    }
+  },
+  "inputs_sha256": {
+    "artifacts/outputs/01a1de05-b3da-7d41-b14b-8a59a6292cf2/TilSwitch-reviewed-annotations.jsonl": "b8999bf8aba122f155a33400f3d8c6cef6c62eb08949540f4245ec21851dbc20",
+    "data/prepared/tatoeba/train.jsonl": "abf81e3da4780c949eef01d13edd26c2f5d270247645da2960ba79a05280e662",
+    "data/review/krcs-dev.gold.jsonl": "398fa041083bcc1d69eb789e33e23df73754c060ba3c87dc4e9a07b5c8d73ec9"
+  },
+  "phase": "development",
+  "shared_training_spellings": 12
+}

@@ -95,12 +95,14 @@ def analyze(raw: str, model: Model | None, policy: Policy | None = None) -> dict
 
     active = [label for label in LANGUAGES if counts[label]]
     lexical_count = len(tokens) - counts["neutral"]
+    tentative_languages = []
     if len(active) >= 2:
         status = "mixed"
         if model and policy.singleton_switch_margin:
-            supported = sum(counts[label] >= 2 or label in strong_evidence for label in active)
-            if supported < 2:
+            weak = [label for label in active if counts[label] == 1 and label not in strong_evidence]
+            if len(active) - len(weak) < 2:
                 status = "possible_switch"
+                tentative_languages = weak
     elif not lexical_count:
         status = "neutral_only"
     elif counts["unk"]:
@@ -111,5 +113,6 @@ def analyze(raw: str, model: Model | None, policy: Policy | None = None) -> dict
     return {"schema_version": SCHEMA, "model_id": model.model_id if model else "script-heuristic",
             "offset_unit": "unicode_code_point", "text": raw, "tokens": predictions,
             "segments": group_segments(raw, predictions), "counts": counts, "lexical_count": lexical_count,
-            "shares": shares, "status": status, "primary_language": active[0] if status == "single" else None,
+            "shares": shares, "status": status, "tentative_languages": tentative_languages,
+            "primary_language": active[0] if status == "single" else None,
             "has_unknown": bool(counts["unk"]), "mixed_review_recommended": policy.mixed_review_recommended}

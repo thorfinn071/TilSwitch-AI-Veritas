@@ -5,7 +5,10 @@ from dataclasses import asdict, replace
 from pathlib import Path
 
 from tilswitch.model import load_bundle
-from tilswitch.types import InputError, json_dump, read_json, text_sha
+from tilswitch.types import InputError, file_sha, json_dump, read_json, text_sha
+
+DIAGNOSTIC_EVIDENCE = Path("release/evidence/holdout-56.json")
+DIAGNOSTIC_SHA256 = "4dddaeee555e644f3873820677605060cd03dc1b62ac1a396f7718dcd178e83c"
 
 
 def verify_submission(submission: Path = Path("release/submission"), reference: Path = Path("release/model")) -> dict:
@@ -41,6 +44,12 @@ def verify_submission(submission: Path = Path("release/submission"), reference: 
 
 if __name__ == "__main__":
     try:
-        print(json_dump(verify_submission()))
+        result = verify_submission()
+        if file_sha(DIAGNOSTIC_EVIDENCE) != DIAGNOSTIC_SHA256:
+            raise InputError("The 56-message diagnostic evidence differs from the contest version.")
+        diagnostic = read_json(DIAGNOSTIC_EVIDENCE)
+        if diagnostic["model_manifest_sha256"] != result["manifest_sha256"]:
+            raise InputError("The diagnostic evidence refers to a different model bundle.")
+        print(json_dump({**result, "diagnostic_reference": diagnostic["reference_provenance"]["kind"]}))
     except (OSError, ValueError, KeyError, TypeError) as error:
         raise SystemExit(f"TilSwitch: {error}") from None

@@ -1,0 +1,339 @@
+{
+  "annotation_lock_sha256": "5613516d9fa5768784297d5b3bd4b7211d2f54801b6266d1b0dc77a949a904ed",
+  "archived_summary_sha256": "384177a2ac67d482b8521647995dd350e66911053484c1a74df522124a05db75",
+  "authored_controls": 16,
+  "case_inventory_sha256": "038daff6787363ed0635a5d2838368490977d2b2b950858a92d7bceff45fc672",
+  "controls": {
+    "abbreviations": {
+      "baseline": {
+        "kk_only": {
+          "possible_switch": 1
+        },
+        "mixed": {},
+        "ru_only": {
+          "ru": 1
+        }
+      },
+      "candidate": {
+        "kk_only": {
+          "possible_switch": 1
+        },
+        "mixed": {},
+        "ru_only": {
+          "ru": 1
+        }
+      }
+    },
+    "ambiguous": {
+      "baseline": {
+        "indeterminate": {
+          "kk": 1,
+          "ru": 1
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      },
+      "candidate": {
+        "indeterminate": {
+          "kk": 1,
+          "ru": 1
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      }
+    },
+    "case_endings": {
+      "baseline": {
+        "kk_only": {
+          "kk": 1,
+          "mixed": 1
+        },
+        "mixed": {
+          "kk": 1,
+          "mixed": 1
+        },
+        "ru_only": {}
+      },
+      "candidate": {
+        "kk_only": {
+          "kk": 1,
+          "possible_switch": 1
+        },
+        "mixed": {
+          "kk": 1,
+          "possible_switch": 1
+        },
+        "ru_only": {}
+      }
+    },
+    "english_controls": {
+      "baseline": {
+        "includes_english": {
+          "en": 2
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      },
+      "candidate": {
+        "includes_english": {
+          "en": 2
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      }
+    },
+    "romanized_kk": {
+      "baseline": {
+        "kk_only": {
+          "en": 3
+        },
+        "mixed": {},
+        "ru_only": {}
+      },
+      "candidate": {
+        "kk_only": {
+          "en": 3
+        },
+        "mixed": {},
+        "ru_only": {}
+      }
+    },
+    "unsupported_latin": {
+      "baseline": {
+        "indeterminate": {
+          "en": 2,
+          "mixed": 1
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      },
+      "candidate": {
+        "indeterminate": {
+          "en": 2,
+          "mixed": 1
+        },
+        "kk_only": {},
+        "mixed": {},
+        "ru_only": {}
+      }
+    }
+  },
+  "inference_policies": [
+    "cutoff_0.35",
+    "cutoff_0.35_with_experimental_loan_alert"
+  ],
+  "messages": 56,
+  "model_manifest_sha256": "d628e4fe4778161ab27d4ea424d63061d37ec9bdd0122828d19d1c88dc23a3aa",
+  "public": {
+    "baseline": {
+      "false_firm_alerts": {
+        "all": {
+          "firm_mixed": 3,
+          "rate": 0.125,
+          "references": 24
+        },
+        "kk_only": {
+          "firm_mixed": 2,
+          "rate": 0.11764705882352941,
+          "references": 17
+        },
+        "ru_only": {
+          "firm_mixed": 1,
+          "rate": 0.14285714285714285,
+          "references": 7
+        }
+      },
+      "mixed_recall": {
+        "firm_mixed": 15,
+        "rate": 0.9375,
+        "references": 16
+      },
+      "one_word_recall": {
+        "all": {
+          "firm_mixed": 10,
+          "rate": 0.9090909090909091,
+          "references": 11
+        },
+        "kk_into_ru": {
+          "firm_mixed": 4,
+          "rate": 0.8,
+          "references": 5
+        },
+        "one_of_each": {
+          "firm_mixed": 0,
+          "rate": null,
+          "references": 0
+        },
+        "ru_into_kk": {
+          "firm_mixed": 6,
+          "rate": 1.0,
+          "references": 6
+        }
+      },
+      "per_supported_language": {
+        "en": {
+          "correct": 0,
+          "f1": null,
+          "precision": null,
+          "predicted": 0,
+          "recall": null,
+          "support": 0
+        },
+        "kk": {
+          "correct": 180,
+          "f1": 0.9703504043126685,
+          "precision": 0.989010989010989,
+          "predicted": 182,
+          "recall": 0.9523809523809523,
+          "support": 189
+        },
+        "ru": {
+          "correct": 107,
+          "f1": 0.9427312775330396,
+          "precision": 0.9385964912280702,
+          "predicted": 114,
+          "recall": 0.9469026548672567,
+          "support": 113
+        }
+      },
+      "reference_messages": {
+        "kk_only": {
+          "kk": 14,
+          "mixed": 2,
+          "possible_switch": 1
+        },
+        "mixed": {
+          "mixed": 15,
+          "possible_switch": 1
+        },
+        "ru_only": {
+          "mixed": 1,
+          "needs_review": 2,
+          "ru": 4
+        }
+      },
+      "supported_word_coverage": {
+        "assigned": 296,
+        "rate": 0.9801324503311258,
+        "references": 302
+      }
+    },
+    "candidate": {
+      "false_firm_alerts": {
+        "all": {
+          "firm_mixed": 3,
+          "rate": 0.125,
+          "references": 24
+        },
+        "kk_only": {
+          "firm_mixed": 2,
+          "rate": 0.11764705882352941,
+          "references": 17
+        },
+        "ru_only": {
+          "firm_mixed": 1,
+          "rate": 0.14285714285714285,
+          "references": 7
+        }
+      },
+      "mixed_recall": {
+        "firm_mixed": 15,
+        "rate": 0.9375,
+        "references": 16
+      },
+      "one_word_recall": {
+        "all": {
+          "firm_mixed": 10,
+          "rate": 0.9090909090909091,
+          "references": 11
+        },
+        "kk_into_ru": {
+          "firm_mixed": 4,
+          "rate": 0.8,
+          "references": 5
+        },
+        "one_of_each": {
+          "firm_mixed": 0,
+          "rate": null,
+          "references": 0
+        },
+        "ru_into_kk": {
+          "firm_mixed": 6,
+          "rate": 1.0,
+          "references": 6
+        }
+      },
+      "per_supported_language": {
+        "en": {
+          "correct": 0,
+          "f1": null,
+          "precision": null,
+          "predicted": 0,
+          "recall": null,
+          "support": 0
+        },
+        "kk": {
+          "correct": 180,
+          "f1": 0.9703504043126685,
+          "precision": 0.989010989010989,
+          "predicted": 182,
+          "recall": 0.9523809523809523,
+          "support": 189
+        },
+        "ru": {
+          "correct": 107,
+          "f1": 0.9427312775330396,
+          "precision": 0.9385964912280702,
+          "predicted": 114,
+          "recall": 0.9469026548672567,
+          "support": 113
+        }
+      },
+      "reference_messages": {
+        "kk_only": {
+          "kk": 14,
+          "mixed": 2,
+          "possible_switch": 1
+        },
+        "mixed": {
+          "mixed": 15,
+          "possible_switch": 1
+        },
+        "ru_only": {
+          "mixed": 1,
+          "needs_review": 2,
+          "ru": 4
+        }
+      },
+      "supported_word_coverage": {
+        "assigned": 296,
+        "rate": 0.9801324503311258,
+        "references": 302
+      }
+    }
+  },
+  "public_messages": 40,
+  "public_paired": {
+    "candidate_cleared_public_numeric_gates": false,
+    "identical_token_predictions": true,
+    "outcomes_changed": 0
+  },
+  "reference_provenance": {
+    "adjudication": "Both disputed rows took the recorded R1 labels after review in the R2 ChatGPT conversation.",
+    "before_adjudication_exact": 381,
+    "cohen_kappa": 0.9900338277387458,
+    "disputed_spans": 2,
+    "kind": "ai_assisted_diagnostic",
+    "lexical_spans": 383,
+    "r1": "Returned worksheet and a self-report relayed in chat. Human provenance was not independently verified.",
+    "r1_file_sha256": "cd85c484ac2f67b2d6096155e6f257ba18a3f51fc33e825c82a9100dec6d4a2d",
+    "r2": "ChatGPT generated the labels from the blank worksheet and guide and identified its review as AI.",
+    "r2_file_sha256": "5dd944acd548385c0e39ac732021e873b583980f1e4cba47b5878cb052f58f7f",
+    "two_human_blind_reviews_verified": false
+  }
+}

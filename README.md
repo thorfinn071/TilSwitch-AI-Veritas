@@ -6,11 +6,11 @@
 
 ## The problem
 
-A school group message can switch languages in the middle of a sentence. TilSwitch helps a student find and copy the phrase they need help understanding. Kazakh and Russian share Cyrillic, and a word can combine a Russian root with a Kazakh ending. Informal spelling can also drop the letters that usually distinguish Kazakh.
+A school group message can switch languages mid-sentence. A student may understand the announcement but miss where to meet. TilSwitch helps them find the phrase to ask about or translate.
 
 ## What we built
 
-Paste a message into the browser app to highlight likely Kazakh, Russian and English phrases, then use **Copy** beside the phrase you want to ask about. TilSwitch preserves the original wording and marks uncertain words for review. The bundled CPU model runs offline after setup.
+Paste **Ертең в актовом зале жиналамыз.** and copy **в актовом зале**. TilSwitch highlights likely Kazakh, Russian and English spans. **Possible switch** underlines words with weaker evidence. Copy retains punctuation and spacing inside the span. The CPU model runs offline after setup.
 
 ~~~powershell
 py -3.11 -m venv .venv
@@ -19,37 +19,31 @@ py -3.11 -m venv .venv
 & .\.venv\Scripts\python.exe -m tilswitch demo --bundle release/submission/model
 ~~~
 
-Run from the repository root. Open the [local demo](http://127.0.0.1:7860), choose **School announcement**, select **Analyze**, and copy **в актовом зале**. The verification command checks the bundled model and aggregate evidence. On macOS or Linux, create the environment with `python3.11 -m venv .venv` and use `.venv/bin/python` for the remaining commands.
+Run from the repository root and open the [local app](http://127.0.0.1:7860). On macOS or Linux use `python3.11` to create the environment and `.venv/bin/python` to run the commands.
 
 ## What we added
 
-We extended the Veritas sentence-level language identification starter with per-word labels, original text offsets, and copyable phrases. The app looks up some informal spellings, uses local evidence for one-letter words such as **в**, and flags some borrowings for review.
+We extended the Veritas sentence-level starter to locate word-level switch boundaries and give each language span its own Copy action. Local rules handle some informal spellings, short words and borrowings.
 
 ## How it works
 
-Logistic regression uses TF-IDF features for sequences of one to four characters. It learns from 6,000 Tatoeba sentences, with each word inheriting its sentence's language. We compared it with a script rule and a variant that also sees the closest word on each side. We selected the word-only model on 12 reviewed KRCS development messages because the context variant missed the Kazakh recall requirement.
+Logistic regression learns character patterns from 6,000 Tatoeba sentences. Each training word inherits its sentence label. We selected the word-only model after comparing a context variant on reviewed development messages. The submission uses a 0.10 word-label margin and a 0.35 firm-alert margin for a lone word.
 
 ## Results
 
-**Original KRCS evaluation.** One bilingual reviewer labeled 36 held-out messages with 190 scored Kazakh words and 62 Russian words. The original release assigned a language to 245 of 252 scored words and flagged 5 of 7 Kazakh-only messages as mixed.
+| Evaluation | Result |
+|---|---|
+| Original KRCS test, 36 messages with one bilingual reviewer | Word macro-F1 **0.541** for the script rule and **0.897** for the original release. F1 **0.933 KK**, **0.861 RU**. Coverage **245/252**. False Mixed on **5/7** Kazakh-only messages. |
+| Submission model 0.35, 40 public messages from a frozen 56-message diagnostic | **15/16** firm Mixed detections and **10/11** one-word switches. False Mixed on **2/17 KK** and **1/7 RU**. Word F1 **0.970 KK**, **0.943 RU**. Coverage **296/302**. |
 
-| Method | Word macro-F1 | Kazakh F1 | Russian F1 |
-|---|---:|---:|---:|
-| Script rule | 0.541 | 0.566 | 0.517 |
-| Word-only | 0.890 | 0.936 | 0.843 |
-| Word + context | 0.886 | 0.938 | 0.833 |
-| Original release with uncertainty threshold | **0.897** | 0.933 | 0.861 |
+The 56-message references used one returned worksheet and a second pass by ChatGPT. Independent human validation is pending. [Annotation audit](docs/INDEPENDENT_RESULTS.md) · [Results and reproduction](docs/RESULTS.md)
 
-**Later 60-message cutoff comparison.** We compared 0.20 and 0.35 on these KazNLP comments and reviews, then selected 0.35. Codex drafted the labels and one bilingual reviewer confirmed them. Firm alerts fell from **4/26 to 2/26** on resolved single-language references. Both cutoffs detected **20/20** mixed messages, including **10/10** one-word switches. Fourteen references were indeterminate and outside those totals. A lone word now needs a larger gap between its two leading language scores to support a firm alert. We show **Possible switch** for weaker evidence and keep the word highlights. [Aggregate evidence](release/submission/reviewed-switch.json) · [Full results and limits](docs/RESULTS.md)
+**Known failure.** In **Он адам зардап шекті.**, the Kazakh numeral meaning “ten” receives a Russian label and triggers Mixed. Romanized Kazakh can also receive English highlights. [Attributed example and expected labels](docs/RESULTS.md#paired-error-example)
 
-**Independent 0.35 evaluation.** Two reviewers independently labeled a frozen 56-message holdout. On the 40 selected public messages, 0.35 detected **15/16** mixed messages and **10/11** one-word switches, with **3/24** false firm alerts on monolingual messages. A proposed borrowing rule left all public outcomes the same and downgraded a one-word switch in a synthetic control. We kept 0.35. [Independent results and method](docs/INDEPENDENT_RESULTS.md)
+## Next steps
 
-In **«Қалаға тек пропускпен кіреді десеші»**, all five reference words are Kazakh. The original release labeled **пропускпен** Russian. The submission bundle marks it uncertain and explains the possible Kazakh ending **-пен**. English results carry a reminder to check the highlight when the input may be romanized Kazakh or another Latin-script language. [KRCS row 385, Borisov, Kozhirbayev and Malykh](https://github.com/madrugado/KRCS/blob/9f4fea488bd85490c23ba33ebecc9362d901a21e/KRCS.csv) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-
-## What we would do next
-
-Time how quickly students find and accurately copy the phrase they need help with. Test short English and romanized Kazakh on fresh conversational data before changing the language predictions.
+Collect two verified human reviews on fresh school-style messages and [measure phrase-finding time and accuracy with students](docs/PHRASE_FINDING_PILOT.md).
 
 ## Sources
 
-[Tatoeba](https://tatoeba.org/en/downloads) · [KRCS author release](https://github.com/madrugado/KRCS) · [FLORES-200](https://github.com/facebookresearch/flores) · [KazNLP](https://arxiv.org/abs/2608.00581) · [Veritas project briefs](https://highschoolhackathon.org/briefs) · [scikit-learn](https://scikit-learn.org/stable/) · [Gradio](https://gradio.app/) · [OpenAI Codex](https://openai.com/codex/). See [data, model and credits](docs/DATA_AND_MODELS.md), [results and reproduction](docs/RESULTS.md) and [blind review instructions](docs/REVIEW.md).
+[Data, prior work and tool credits](docs/DATA_AND_MODELS.md)

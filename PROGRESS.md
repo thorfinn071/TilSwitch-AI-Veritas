@@ -1,6 +1,6 @@
 # TilSwitch AI progress
 
-**Current milestone** The 0.35 Mixed-alert submission bundle is staged in `release/submission/model` with its aggregate evidence and a verification command. The public fallback is the original locked release at `988119e`. The entrant owns publication and confirmation. [Write-up and quickstart](README.md) · [Submission handoff](docs/HACKATHON_SUBMISSION.md)
+**Current milestone** The contest package uses the verified 0.35 bundle in `release/submission/model`. Copy preserves interior punctuation. Tentative language labels are underlined. The 56-message report records ChatGPT as R2 and publishes diagnostic counts with that limitation. The entrant owns publication and confirmation. [Write-up and quickstart](README.md) · [Submission handoff](docs/HACKATHON_SUBMISSION.md)
 
 **Workspace at intake** Empty Git repository with no commits and no project or ancestor AGENTS.md found. The request was a separate text attachment. The official brief was obtained from the organizer website.
 

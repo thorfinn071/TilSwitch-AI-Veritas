@@ -1,5 +1,7 @@
 # TilSwitch AI results
 
+The contest package loads the verified 0.35 bundle in `release/submission/model`. See the [84-message development comparison](COMPETITION_DEVELOPMENT.md) and the [56-message diagnostic with corrected annotation provenance](INDEPENDENT_RESULTS.md). The chronological results below document earlier training, evaluation and cutoff selection.
+
 ## Locked monolingual evaluation, Nov 14, 2026
 
 Source-internal Tatoeba test with 350 sentences per language, 1,050 sentences in total and 6,673 lexical words. The training split had 2,000 sentences per language and development had 350 per language. Grouped extraction used seed 1729 and protected against known linked translations and near-duplicates. A same-source repeat preparation reproduced all three split hashes.
@@ -134,7 +136,7 @@ The locked comparison used the word-recovery bundle and two cutoffs for a single
 
 The held-out batch contains 60 short, deliberately selected public comments and reviews from the upstream KazNLP training split. Codex drafted the word labels and one bilingual reviewer confirmed them with the prefilled labels visible. Independent reviewer agreement is unmeasured. Fourteen messages have an indeterminate reference and are excluded from the binary alert scores. [Pinned KazNLP source](https://github.com/naadgob/KazNLP/blob/f5d5be8108179aded06e145ad6eb019489f207e4/data/training/filter/v1/train.csv)
 
-| Held-out message outcome | 0.20 cutoff | 0.35 candidate |
+| Cutoff-selection outcome | 0.20 cutoff | 0.35 candidate |
 |---|---:|---:|
 | Firm Mixed on resolved single-language references | 4/26 | 2/26 |
 | Firm Mixed on Kazakh-only references | 0/6 | 0/6 |
@@ -145,7 +147,7 @@ The held-out batch contains 60 short, deliberately selected public comments and 
 
 The candidate moved two Russian-only messages and one indeterminate message to Possible switch. Both policies assigned a language to 507 of 509 scored Kazakh and Russian words. Kazakh recall was 225/228 and Russian recall was 274/281. We chose 0.35 using this comparison and its locked decision rule. The cutoff still needs independent confirmation. The six resolved Kazakh-only messages and ten one-word switches give limited information about error rates on other texts. [Submission bundle and aggregate evidence](../release/submission/reviewed-switch.json)
 
-From a clean checkout with the pinned dependencies, run `python -m experiments.verify_submission` to check the release bundle against the aggregate evidence. An exact replay uses the [packaging command](../experiments/package_reviewed_switch.py) with the original lock, local reviewed annotations and matching Windows environment. It checks the locked decision rule and writes a new candidate directory.
+Run `python -m experiments.verify_submission` in the contest checkout to check the release bundle against the aggregate evidence. An exact historical replay uses the [packaging command](../experiments/package_reviewed_switch.py) from local commit `750660a`, with the original lock, local reviewed annotations and matching Windows environment. The historical lock binds code as well as data. The command checks the locked decision rule and writes a new candidate directory.
 
 ```powershell
 python -m experiments.package_reviewed_switch --lock artifacts/runs/reviewed-switch-v1/lock.json --out artifacts/reviewed-switch-replay

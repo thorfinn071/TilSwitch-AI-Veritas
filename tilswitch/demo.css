@@ -196,6 +196,7 @@ html, body { overflow-x: clip; }
     overflow-wrap: anywhere;
 }
 .analysis-original mark { border-radius: 4px; box-shadow: none; }
+.analysis-original .language-tentative { text-decoration: underline dotted; text-underline-offset: 0.22em; }
 .language-kk { color: var(--kk-ink); background: var(--kk-bg); }
 .language-ru { color: var(--ru-ink); background: var(--ru-bg); }
 .language-en { color: var(--en-ink); background: var(--en-bg); }

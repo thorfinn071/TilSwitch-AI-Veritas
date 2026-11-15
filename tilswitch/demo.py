@@ -37,6 +37,7 @@ def render_result(result: dict) -> str:
     raw = result["text"]
     highlights = []
     rows = []
+    tentative = result.get("tentative_languages", ())
     reason_index = {
         token["start"]: REASONS[token["reason"]] for token in result["tokens"]
         if token["label"] == "unk" and token["reason"] in REASONS
@@ -46,11 +47,14 @@ def render_result(result: dict) -> str:
         start, end, label = segment["start"], segment["end"], segment["label"]
         content = _literal(raw[start:end])
         highlights.append(_literal(raw[offset:start]))
-        attributes = f'class="language-{label}"'
+        style = " language-tentative" if label in tentative else ""
+        attributes = f'class="language-{label}{style}"'
         if label != "unk":
             attributes += f' lang="{label}"'
         highlights.append(f"<mark {attributes}>{content}</mark>")
         reasons = sorted({value for key, value in reason_index.items() if start <= key < end})
+        if label in tentative:
+            reasons.append("Tentative language label")
         details = f"<small>{' · '.join(reasons)}</small>" if reasons else ""
         rows.append(
             f'<li><span class="language-key language-{label}">{LANGUAGE_NAMES[label]}</span>'
@@ -84,7 +88,7 @@ def render_result(result: dict) -> str:
     legend = f'<ul class="language-counts" aria-label="Word counts">{"".join(counts)}</ul>' if counts else ""
     note = ""
     if status == "possible_switch":
-        note = '<p class="analysis-note">The switch depends on a word with close language scores. Check the highlights.</p>'
+        note = '<p class="analysis-note">Check the underlined words. Their language scores are close.</p>'
     if result["has_unknown"]:
         note += '<p class="analysis-note">Review uncertain words before using the result.</p>'
     if result["counts"]["en"]:
